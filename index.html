@@ -1,25 +1,26 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-AR">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>SHOCK COFFEE | Esto es para vos</title>
-<meta name="description" content="Si haces ayuno, laburas duro y entrenas fuerte... esto es para vos. SHOCK COFFEE: 300mg de cafeína, certificado UBA. 10% OFF con TENGOCOSASQUEHACER." />
-<meta name="theme-color" content="#0A0A0B" />
-<meta name="robots" content="index, follow" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>SHOCK COFFEE — Para los que quieren rendir más</title>
+<meta name="description" content="Si querés mejorar tu salud, tu mente o tu cuerpo: SHOCK COFFEE tiene 300mg de cafeína natural, certificado por la UBA. +22.000 packs vendidos. 10% OFF con TENGOCOSASQUEHACER." />
+<meta name="theme-color" content="#F4EFE6" />
 <link rel="canonical" href="https://paravos.theshockcoffee.com/" />
+<meta name="robots" content="index, follow" />
 
-<!-- Open Graph -->
 <meta property="og:type" content="website" />
-<meta property="og:title" content="ESTO ES PARA VOS — SHOCK COFFEE" />
-<meta property="og:description" content="Hacés ayuno + laburás duro + entrenás fuerte. Encontramos lo que tienen en común." />
+<meta property="og:title" content="Para los que quieren rendir más — Shock Coffee" />
+<meta property="og:description" content="300mg de cafeína natural · Certificado UBA · +22.000 packs vendidos. 10% OFF con TENGOCOSASQUEHACER." />
 <meta property="og:url" content="https://paravos.theshockcoffee.com/" />
+<meta property="og:image" content="https://acdn-us.mitiendanube.com/stores/003/104/793/products/pack-pack-b089e4837c478e39dc17716397709523-1024-1024.webp" />
 
 <link rel="icon" type="image/png" href="https://acdn-us.mitiendanube.com/stores/003/104/793/themes/common/logo-1702573383-1683748864-96f5d266512f581b76e3211392a287351683748864-640-0.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Quantico:wght@400;700&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="preconnect" href="https://acdn-us.mitiendanube.com" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
 <!-- Meta Pixel -->
 <script>
@@ -30,30 +31,40 @@ fbq('init','511513174688645');fbq('track','PageView');
 
 <style>
 :root{
-  --bg:#0A0A0B;
-  --bg-1:#111213;
-  --bg-2:#1A1B1D;
-  --bg-3:#28292A;
-  --line:rgba(255,255,255,0.10);
-  --line-2:rgba(255,255,255,0.18);
-  --fg:#FFFFFF;
-  --fg-soft:#E2E6E9;
-  --fg-mute:#9DA3A8;
-  --accent:#F5B843;
-  --accent-soft:rgba(245,184,67,0.16);
-  --success:#5CC97B;
-  --danger:#F44444;
+  --bg: #F7F2E8;
+  --bg-2: #FFFFFF;
+  --bg-3: #EFE7D6;
+  --bg-dark: #14110E;
+  --bg-dark-2: #1F1A14;
+  --line: rgba(20,17,14,0.10);
+  --line-2: rgba(20,17,14,0.18);
+  --line-dark: rgba(255,255,255,0.10);
+  --fg: #14110E;
+  --fg-soft: #2D261F;
+  --fg-mute: #6B6056;
+  --fg-on-dark: #F7F2E8;
+  --fg-on-dark-mute: rgba(247,242,232,0.65);
+  --accent: #C9461A;
+  --accent-2: #A93D17;
+  --accent-soft: #FBE4D5;
+  --highlight: #F4B423;
+  --highlight-soft: #FCEFCC;
+  --success: #2D7A3E;
+  --success-soft: #D8EBDC;
 
-  --display:'Quantico', 'Inter', system-ui, sans-serif;
-  --sans:'Inter', system-ui, sans-serif;
-  --mono:'JetBrains Mono', ui-monospace, monospace;
+  --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
 
-  --container:1180px;
-  --pad-section: clamp(80px, 11vw, 140px);
-  --radius:14px;
-  --radius-lg:22px;
+  --pad-section: clamp(72px, 11vw, 130px);
+  --container: 1200px;
+  --container-narrow: 900px;
+  --radius: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
 
-  color-scheme:dark;
+  --shadow-card: 0 1px 0 rgba(20,17,14,0.04), 0 24px 48px -28px rgba(20,17,14,0.18);
+  --shadow-card-hover: 0 1px 0 rgba(20,17,14,0.06), 0 32px 60px -28px rgba(20,17,14,0.24);
 }
 
 *{box-sizing:border-box}
@@ -63,1046 +74,1331 @@ body{
   background:var(--bg);
   color:var(--fg);
   font-family:var(--sans);
-  font-size:16px;
+  font-size:17px;
   line-height:1.55;
+  font-feature-settings:"ss01","cv11";
   -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
   overflow-x:hidden;
 }
-
-/* Background grain + scanlines + vignette */
-.grain,.scanlines,.vignette{
-  position:fixed;inset:0;pointer-events:none;z-index:1;
-}
-.grain{
-  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-  opacity:.6;mix-blend-mode:overlay;
-}
-.scanlines{
-  background:repeating-linear-gradient(0deg, rgba(255,255,255,0.012) 0 2px, transparent 2px 4px);
-  mix-blend-mode:overlay;
-}
-.vignette{
-  background:radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.6) 100%);
-}
-
 img{max-width:100%;height:auto;display:block}
 a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:0;background:transparent;color:inherit}
 
-.frame{position:relative;z-index:2}
+/* TYPOGRAPHY */
+h1,h2,h3,h4,h5{
+  font-family:var(--serif);
+  font-weight:600;
+  letter-spacing:-0.02em;
+  line-height:1.05;
+  margin:0 0 .5em;
+  color:var(--fg);
+  font-variation-settings:"opsz" 144;
+}
+h1{font-size:clamp(2.6rem, 5.8vw, 5rem);font-weight:600}
+h2{font-size:clamp(2rem, 4.2vw, 3.4rem)}
+h3{font-size:clamp(1.4rem, 2.2vw, 1.85rem);font-weight:600}
+h4{font-size:1.15rem;font-weight:600;line-height:1.2}
+p{margin:0 0 1em;color:var(--fg-soft)}
+p:last-child{margin-bottom:0}
+strong,b{font-weight:600;color:var(--fg)}
 
-/* Util bar */
-.util-bar{
-  position:sticky;top:0;z-index:30;
-  display:grid;grid-template-columns:1fr 1fr 1fr;
-  align-items:center;gap:16px;
-  padding:8px 24px;
-  font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;
-  background:rgba(10,10,11,0.85);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--line);
-  text-transform:uppercase;
-  color:var(--fg-soft);
+.italic{font-style:italic;font-variation-settings:"opsz" 144,"SOFT" 100}
+em{font-style:italic;color:var(--accent);font-variation-settings:"opsz" 144}
+
+::selection{background:var(--accent);color:#fff}
+
+/* PRIMITIVES */
+.container{max-width:var(--container);margin:0 auto;padding:0 24px;width:100%}
+.container-narrow{max-width:var(--container-narrow);margin:0 auto;padding:0 24px;width:100%}
+.section{padding:var(--pad-section) 0}
+.section-tight{padding:clamp(56px,8vw,96px) 0}
+.section-dark{background:var(--bg-dark);color:var(--fg-on-dark)}
+.section-dark h1,.section-dark h2,.section-dark h3,.section-dark h4{color:var(--fg-on-dark)}
+.section-dark p{color:var(--fg-on-dark-mute)}
+.section-dark strong{color:var(--fg-on-dark)}
+.section-cream{background:var(--bg-3)}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent);
 }
-.util-bar .left{display:flex;gap:14px;align-items:center}
-.util-bar .center{text-align:center;color:var(--fg-mute)}
-.util-bar .right{display:flex;gap:14px;justify-content:flex-end}
-.live-dot{
-  display:inline-block;width:8px;height:8px;border-radius:50%;
-  background:var(--danger);margin-right:6px;vertical-align:middle;
-  box-shadow:0 0 0 0 rgba(244,68,68,.7);animation:pulse 1.6s infinite;
+.eyebrow.muted{color:var(--fg-mute)}
+.section-dark .eyebrow{color:var(--highlight)}
+
+.lead{font-size:clamp(1.05rem,1vw + .8rem,1.3rem);color:var(--fg-soft);line-height:1.55}
+
+/* BUTTONS */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-family:var(--sans);font-size:1rem;font-weight:600;letter-spacing:-0.005em;
+  padding:18px 30px;border-radius:var(--radius-pill);
+  background:var(--fg);color:var(--bg-2);
+  transition:transform .2s, box-shadow .25s, background .2s;
+  white-space:nowrap;
+  border:1.5px solid var(--fg);
+  line-height:1;
 }
-@keyframes pulse{
-  0%{box-shadow:0 0 0 0 rgba(244,68,68,.7)}
-  70%{box-shadow:0 0 0 8px rgba(244,68,68,0)}
-  100%{box-shadow:0 0 0 0 rgba(244,68,68,0)}
+.btn:hover{transform:translateY(-1px);box-shadow:0 14px 28px -10px rgba(20,17,14,0.35)}
+.btn-arrow{transition:transform .25s}
+.btn:hover .btn-arrow{transform:translateX(4px)}
+.btn.btn-accent{background:var(--accent);border-color:var(--accent)}
+.btn.btn-accent:hover{background:var(--accent-2);border-color:var(--accent-2);box-shadow:0 14px 28px -10px rgba(201,70,26,0.5)}
+.btn.btn-cream{background:var(--bg-2);color:var(--fg);border-color:var(--fg)}
+.btn.btn-cream:hover{background:var(--fg);color:var(--bg-2)}
+.btn.btn-ghost{background:transparent;color:var(--fg);border-color:var(--line-2)}
+.btn.btn-ghost:hover{border-color:var(--fg);background:transparent;box-shadow:none;transform:translateY(-1px)}
+.btn.btn-block{display:flex;width:100%}
+.btn.btn-lg{padding:22px 36px;font-size:1.05rem}
+.btn.btn-sm{padding:12px 20px;font-size:.92rem}
+
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+
+/* OFFER BAR (top) */
+.offer-bar{
+  position:relative;z-index:30;
+  background:var(--fg);color:var(--bg);
+  padding:11px 24px;
+  text-align:center;
+  font-size:.86rem;letter-spacing:.01em;
+  font-weight:500;
 }
-@media(max-width:720px){
-  .util-bar{grid-template-columns:1fr 1fr;font-size:.66rem}
-  .util-bar .center{display:none}
+.offer-bar strong{color:var(--highlight);font-weight:700;letter-spacing:.04em}
+.offer-bar .sep{color:var(--fg-on-dark-mute);margin:0 12px;display:inline-block}
+@media(max-width:640px){
+  .offer-bar{font-size:.78rem;padding:10px 14px}
+  .offer-bar .sep{margin:0 6px}
+  .offer-bar .hide-mobile{display:none}
 }
 
-/* Nav */
+/* NAV */
 .nav{
-  position:sticky;top:31px;z-index:29;
-  display:flex;align-items:center;justify-content:space-between;
-  gap:24px;padding:18px 24px;
-  background:rgba(10,10,11,0.7);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
+  position:sticky;top:0;z-index:25;
+  background:rgba(247,242,232,0.92);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
   border-bottom:1px solid var(--line);
+  padding:14px 0;
 }
-.nav-logo{height:36px;width:auto;filter:invert(1) brightness(2)}
-.nav-links{display:flex;gap:28px;font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+.nav-inner{
+  max-width:var(--container);margin:0 auto;padding:0 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+}
+.nav-brand{
+  display:flex;align-items:center;gap:10px;
+  font-family:var(--serif);font-size:1.25rem;font-weight:700;letter-spacing:-.02em;
+}
+.nav-brand img{height:30px;width:auto}
+.nav-links{display:flex;gap:28px;font-size:.94rem;font-weight:500}
 .nav-links a{color:var(--fg-soft);transition:color .15s}
 .nav-links a:hover{color:var(--accent)}
-.nav-cta{
-  font-family:var(--mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;
-  padding:10px 18px;border:1.5px solid var(--fg);border-radius:4px;
-  transition:all .15s;
-}
-.nav-cta:hover{background:var(--accent);border-color:var(--accent);color:#000}
-@media(max-width:900px){
-  .nav-links{display:none}
-}
-
-/* Container */
-.container{width:100%;max-width:var(--container);margin:0 auto;padding:0 24px}
+@media(max-width:840px){.nav-links{display:none}}
 
 /* HERO */
 .hero{
-  position:relative;padding: clamp(60px, 10vh, 120px) 0 clamp(40px, 6vh, 80px);
-  border-bottom:1px solid var(--line);
+  padding:clamp(40px, 6vw, 72px) 0 clamp(60px, 8vw, 100px);
+  position:relative;
 }
-.hero-eyebrow{
-  font-family:var(--mono);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--accent);margin-bottom:24px;
-  display:inline-flex;align-items:center;gap:8px;
+.hero-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);
+  gap:clamp(32px,5vw,72px);
+  align-items:center;
 }
-.hero-eyebrow::before{
-  content:"";display:inline-block;width:8px;height:8px;background:var(--accent);
-}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:36px}}
 
-.headline{
-  font-family:var(--display);font-weight:700;
-  font-size:clamp(2.6rem, 8.5vw, 7rem);
-  line-height:.95;letter-spacing:-.02em;
-  margin:0 0 28px;
-  text-transform:uppercase;
+.hero-rating{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--bg-2);
+  border:1px solid var(--line);
+  padding:8px 16px;border-radius:var(--radius-pill);
+  font-size:.86rem;color:var(--fg-soft);font-weight:500;
+  margin-bottom:24px;
 }
-.headline-line{display:block;overflow:hidden}
-.headline-line span{display:inline-block}
+.hero-rating .stars{color:var(--highlight);letter-spacing:0;font-size:.95rem}
+.hero-rating .rating-num{color:var(--fg);font-weight:600}
+.hero-rating .sep{color:var(--line-2);margin:0 4px}
 
-.shock-glitch{
-  position:relative;display:inline-block;color:var(--accent);
+.hero h1{
+  margin:0 0 24px;
+  letter-spacing:-0.025em;
 }
-.shock-glitch::before,.shock-glitch::after{
-  content:attr(data-text);position:absolute;left:0;top:0;width:100%;
-  background:var(--bg);overflow:hidden;
-}
-.shock-glitch::before{
-  color:#ff3a3a;animation:glitch1 3s infinite linear alternate-reverse;
-  clip-path:inset(0 0 70% 0);transform:translate(2px,0);
-}
-.shock-glitch::after{
-  color:#3aaaff;animation:glitch2 2.7s infinite linear alternate-reverse;
-  clip-path:inset(70% 0 0 0);transform:translate(-2px,0);
-}
-@keyframes glitch1{
-  0%{clip-path:inset(0 0 70% 0)}
-  20%{clip-path:inset(40% 0 50% 0)}
-  40%{clip-path:inset(10% 0 80% 0)}
-  60%{clip-path:inset(60% 0 20% 0)}
-  100%{clip-path:inset(0 0 95% 0)}
-}
-@keyframes glitch2{
-  0%{clip-path:inset(70% 0 0 0)}
-  20%{clip-path:inset(50% 0 30% 0)}
-  40%{clip-path:inset(80% 0 5% 0)}
-  60%{clip-path:inset(30% 0 60% 0)}
-  100%{clip-path:inset(95% 0 0 0)}
-}
-
-.hero-lede{
-  font-size:clamp(1.05rem, 1vw + .85rem, 1.3rem);
-  color:var(--fg-soft);max-width:680px;margin:0 0 16px;line-height:1.5;
-}
-.hero-lede strong{color:var(--fg);font-weight:700}
-
-.hero-tags{
-  display:flex;flex-wrap:wrap;gap:8px;margin:32px 0 36px;
-}
-.hero-tag{
-  font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;
-  padding:8px 14px;border:1px solid var(--line-2);border-radius:999px;
+.hero h1 .accent{color:var(--accent);font-style:italic;font-variation-settings:"opsz" 144}
+.hero-sub{
+  font-size:clamp(1.05rem, 1vw + .8rem, 1.25rem);
   color:var(--fg-soft);
+  max-width:540px;
+  margin:0 0 32px;
+  line-height:1.5;
 }
-.hero-tag.match{background:var(--accent);border-color:var(--accent);color:#000;font-weight:700}
+.hero-sub strong{color:var(--fg)}
 
-.cta-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
-.cta{
-  display:inline-flex;align-items:center;gap:14px;
-  font-family:var(--mono);font-size:.95rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
-  padding:20px 32px;background:var(--accent);color:#000;
-  border-radius:4px;border:0;cursor:pointer;
-  transition:transform .15s, box-shadow .2s, background .15s;
+.hero-cta-block{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.hero-meta{
+  display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center;
+  font-size:.88rem;color:var(--fg-mute);font-weight:500;
+}
+.hero-meta-item{display:inline-flex;align-items:center;gap:6px}
+.hero-meta-item svg{width:14px;height:14px;color:var(--success)}
+
+.hero-image{
+  position:relative;aspect-ratio:1/1;border-radius:var(--radius-lg);
+  background:var(--bg-3);
+  display:grid;place-items:center;
+  overflow:hidden;
+}
+.hero-image img{
+  width:88%;height:auto;
+  filter:drop-shadow(0 30px 50px rgba(20,17,14,0.25));
+  transform:rotate(-4deg);
+  transition:transform .6s cubic-bezier(.2,.7,.2,1);
+}
+.hero-image:hover img{transform:rotate(-2deg) scale(1.02)}
+.hero-image-tag{
+  position:absolute;top:24px;left:24px;
+  background:var(--fg);color:var(--bg-2);
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;
+  padding:7px 12px;border-radius:var(--radius-pill);font-weight:500;
+}
+.hero-image-stamp{
+  position:absolute;bottom:24px;right:24px;
+  width:96px;height:96px;border-radius:50%;
+  background:var(--highlight);
+  color:var(--fg);
+  display:grid;place-items:center;text-align:center;
+  font-family:var(--serif);font-weight:700;font-size:.86rem;line-height:1.05;
+  transform:rotate(-12deg);
+  box-shadow:0 8px 20px rgba(20,17,14,0.18);
+}
+.hero-image-stamp .big{font-size:1.5rem;display:block;margin-bottom:2px}
+
+/* TRUST STRIP */
+.trust-strip{
+  background:var(--bg-dark);color:var(--fg-on-dark);
+  padding:18px 24px;
+  overflow:hidden;
+}
+.trust-strip-inner{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:14px 36px;
+  font-family:var(--mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--fg-on-dark);
+}
+.trust-strip-inner span{display:inline-flex;align-items:center;gap:8px;opacity:.85}
+.trust-strip-inner span::before{
+  content:"";width:5px;height:5px;border-radius:50%;background:var(--highlight);
+  display:inline-block;
+}
+@media(max-width:720px){.trust-strip-inner{font-size:.7rem;gap:10px 22px}}
+
+/* TRANSFORMATION INTRO */
+.intro-grid{
+  display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(32px,5vw,72px);align-items:center;
+}
+@media(max-width:900px){.intro-grid{grid-template-columns:1fr}}
+.intro-image{
+  border-radius:var(--radius-lg);overflow:hidden;
+  aspect-ratio:5/6;background:var(--bg-3);
+}
+.intro-image img{width:100%;height:100%;object-fit:cover}
+
+.intro-copy h2{margin-bottom:24px}
+.intro-copy h2 em{color:var(--accent);font-style:italic}
+.intro-copy p{font-size:1.1rem;line-height:1.6;color:var(--fg-soft);max-width:540px}
+
+/* THREE PATHS */
+.paths{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+  margin-top:48px;
+}
+@media(max-width:900px){.paths{grid-template-columns:1fr;gap:18px}}
+
+.path-card{
+  background:var(--bg-2);
+  border:1px solid var(--line);
+  border-radius:var(--radius-lg);
+  padding:32px 28px;
+  display:flex;flex-direction:column;gap:18px;
+  transition:transform .25s, box-shadow .3s, border-color .25s;
+  position:relative;
+  overflow:hidden;
+}
+.path-card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-card-hover);
+  border-color:var(--line-2);
+}
+.path-card-img{
+  width:100%;aspect-ratio:4/3;
+  border-radius:var(--radius);
+  overflow:hidden;
+  background:var(--bg-3);
+  margin:0 0 4px;
+}
+.path-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.path-card:hover .path-card-img img{transform:scale(1.04)}
+
+.path-card-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent);font-weight:500;
+}
+.path-card h3{
+  font-size:1.4rem;line-height:1.15;margin:0;
+  font-weight:600;letter-spacing:-0.015em;
+}
+.path-card h3 em{color:var(--accent);font-style:italic;font-variation-settings:"opsz" 144}
+.path-card-desc{font-size:1rem;color:var(--fg-soft);margin:0;line-height:1.5}
+.path-card ul{
+  list-style:none;padding:0;margin:0;
+  display:flex;flex-direction:column;gap:10px;
+  margin-top:auto;padding-top:18px;border-top:1px solid var(--line);
+}
+.path-card ul li{
+  position:relative;padding-left:24px;
+  font-size:.93rem;color:var(--fg-soft);line-height:1.4;
+}
+.path-card ul li::before{
+  content:"";position:absolute;left:0;top:6px;
+  width:14px;height:14px;border-radius:50%;
+  background:var(--success-soft);
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14' fill='none'><path d='M3.5 7.5L6 10L11 5' stroke='%232D7A3E' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-size:14px 14px;
+}
+
+.paths-punchline{
+  text-align:center;margin-top:56px;
+  font-family:var(--serif);font-size:clamp(1.4rem,2.4vw,2rem);font-weight:500;
+  letter-spacing:-0.015em;line-height:1.3;color:var(--fg);
+  max-width:760px;margin-left:auto;margin-right:auto;
+}
+.paths-punchline em{color:var(--accent);font-style:italic}
+
+/* SCIENCE / WHY */
+.science-grid{
+  display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(36px,6vw,80px);align-items:center;
+}
+@media(max-width:900px){.science-grid{grid-template-columns:1fr}}
+.science-stat-block{
+  display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:32px 0;
+}
+.science-stat{
+  background:var(--bg-dark-2);
+  border-radius:var(--radius);
+  padding:22px;
+  border:1px solid var(--line-dark);
+}
+.science-stat-label{
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--fg-on-dark-mute);margin-bottom:6px;
+}
+.science-stat-value{
+  font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;
+  color:var(--highlight);letter-spacing:-0.02em;line-height:1;
+  margin-bottom:6px;
+}
+.science-stat-vs{font-size:.86rem;color:var(--fg-on-dark-mute);font-weight:500}
+.science-stat-vs s{opacity:.6}
+
+.science-mechanisms{margin-top:32px;display:flex;flex-direction:column;gap:18px}
+.mechanism{
+  display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:flex-start;
+}
+.mechanism-num{
+  font-family:var(--mono);font-size:.86rem;font-weight:500;
+  color:var(--highlight);
+  background:rgba(244,180,35,0.12);
+  border:1px solid rgba(244,180,35,0.3);
+  width:32px;height:32px;border-radius:50%;
+  display:grid;place-items:center;flex-shrink:0;
+}
+.mechanism h4{margin:0 0 4px;color:var(--fg-on-dark);font-size:1.05rem}
+.mechanism p{font-size:.95rem;line-height:1.5;color:var(--fg-on-dark-mute);margin:0}
+.mechanism strong{color:var(--fg-on-dark)}
+
+.science-image{
+  border-radius:var(--radius-lg);overflow:hidden;background:var(--bg-dark-2);
+  aspect-ratio:4/5;
+}
+.science-image img{width:100%;height:100%;object-fit:cover}
+
+/* UBA card */
+.uba-card{
+  background:var(--bg-2);
+  border:1px solid var(--line);
+  border-radius:var(--radius-lg);
+  padding:32px;
+  margin-top:56px;
+  display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;
+  box-shadow:var(--shadow-card);
+}
+@media(max-width:900px){.uba-card{grid-template-columns:auto 1fr;gap:18px}.uba-card .uba-cta{grid-column:1/-1}}
+@media(max-width:640px){.uba-card{grid-template-columns:1fr;text-align:center}.uba-card .uba-icon{justify-self:center}}
+
+.uba-icon{
+  width:64px;height:64px;border-radius:50%;
+  background:var(--success-soft);color:var(--success);
+  display:grid;place-items:center;
+  font-family:var(--serif);font-size:1.3rem;font-weight:700;
+  flex-shrink:0;
+}
+.uba-card h3{margin:0 0 4px;font-size:1.15rem;font-weight:600}
+.uba-card p{margin:0;color:var(--fg-mute);font-size:.95rem}
+.uba-cta{font-weight:600;color:var(--accent);font-size:.92rem;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.uba-cta:hover{text-decoration:underline}
+
+/* PRODUCT GALLERY */
+.product-gallery{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px;
+}
+@media(max-width:900px){.product-gallery{grid-template-columns:repeat(2,1fr)}}
+.product-tile{
+  position:relative;
+  background:var(--bg-3);border-radius:var(--radius);
+  aspect-ratio:1/1;overflow:hidden;
+  display:grid;place-items:center;
+  transition:transform .3s, box-shadow .3s;
+}
+.product-tile:hover{transform:translateY(-3px);box-shadow:var(--shadow-card)}
+.product-tile img{width:75%;height:auto;transition:transform .4s}
+.product-tile:hover img{transform:scale(1.04)}
+.product-tile-name{
+  position:absolute;bottom:12px;left:12px;right:12px;
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--fg);text-align:center;font-weight:500;
+}
+
+/* DAY WITH SHOCK */
+.day-rows{display:flex;flex-direction:column;gap:16px;margin-top:48px;max-width:920px;margin-left:auto;margin-right:auto}
+.day-row{
+  background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius-lg);
+  padding:24px 28px;
+  display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;
+  transition:border-color .2s, box-shadow .25s;
+}
+.day-row:hover{border-color:var(--line-2);box-shadow:var(--shadow-card)}
+@media(max-width:720px){.day-row{grid-template-columns:1fr;gap:12px;text-align:left;padding:22px}}
+
+.day-time{
+  font-family:var(--mono);font-size:.82rem;letter-spacing:.06em;color:var(--accent);
+  font-weight:600;
   white-space:nowrap;
 }
-.cta:hover{transform:translateY(-2px);box-shadow:0 18px 40px -15px rgba(245,184,67,.5)}
-.cta-arrow{transition:transform .2s}
-.cta:hover .cta-arrow{transform:translateX(4px)}
-.cta-meta{
-  font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--fg-mute);
+.day-row h4{margin:0 0 4px;font-size:1.1rem;font-weight:600}
+.day-row p{margin:0;font-size:.95rem;color:var(--fg-soft);line-height:1.5}
+.day-row p strong{color:var(--fg)}
+.day-tag{
+  font-size:.74rem;font-family:var(--mono);letter-spacing:.12em;text-transform:uppercase;
+  padding:6px 12px;border-radius:var(--radius-pill);font-weight:500;
+  white-space:nowrap;
+}
+.day-tag.salud{background:var(--success-soft);color:var(--success)}
+.day-tag.mente{background:var(--highlight-soft);color:#8B5C0E}
+.day-tag.cuerpo{background:var(--accent-soft);color:var(--accent)}
+
+/* TESTIMONIALS */
+.tests-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;
+}
+@media(max-width:1000px){.tests-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){.tests-grid{grid-template-columns:1fr}}
+
+.test{
+  background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius-lg);
+  padding:26px 24px;
+  display:flex;flex-direction:column;gap:16px;
+  transition:transform .25s, box-shadow .3s;
+}
+.test:hover{transform:translateY(-3px);box-shadow:var(--shadow-card)}
+.test-stars{color:var(--highlight);font-size:.92rem;letter-spacing:1px}
+.test-quote{
+  font-size:1rem;line-height:1.55;color:var(--fg-soft);
+  margin:0;
+}
+.test-quote strong{color:var(--fg)}
+.test-meta{
+  display:flex;align-items:center;gap:12px;
+  margin-top:auto;padding-top:14px;border-top:1px solid var(--line);
+}
+.test-avatar{
+  width:42px;height:42px;border-radius:50%;
+  background:var(--accent-soft);color:var(--accent);
+  display:grid;place-items:center;
+  font-family:var(--serif);font-size:1rem;font-weight:700;
+  flex-shrink:0;
+}
+.test-name{font-weight:600;font-size:.95rem;line-height:1.2}
+.test-where{font-size:.82rem;color:var(--fg-mute);margin-top:2px;line-height:1.2}
+.test-verified{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:.72rem;color:var(--success);font-weight:500;
+  margin-top:4px;
+}
+.test-verified::before{
+  content:"";width:11px;height:11px;border-radius:50%;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='%232D7A3E'><circle cx='6' cy='6' r='6'/><path d='M3.2 6.2l1.7 1.7L8.8 4' stroke='white' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round' fill='none'/></svg>");
+  background-size:11px 11px;
 }
 
-.scroll-hint{
-  margin-top:60px;font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--fg-mute);display:flex;gap:10px;align-items:center;
+/* WhatsApp-style testimonial */
+.test-wa{
+  padding:0;background:#075E54;border-color:#075E54;overflow:hidden;
+  display:flex;flex-direction:column;
 }
-.cursor-blink{
-  display:inline-block;width:10px;height:14px;background:var(--accent);
-  animation:blink 1s infinite;
+.test-wa-header{
+  background:#075E54;color:#fff;padding:14px 18px;
+  display:flex;align-items:center;gap:12px;
 }
-@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+.test-wa-avatar{
+  width:36px;height:36px;border-radius:50%;background:#25D366;color:#fff;
+  display:grid;place-items:center;font-family:var(--serif);font-size:.92rem;font-weight:700;
+}
+.test-wa-name{font-size:.92rem;font-weight:500;color:#fff}
+.test-wa-status{font-size:.7rem;color:rgba(255,255,255,0.7)}
+.test-wa-body{
+  background:#ECE5DD;padding:20px 16px;display:flex;flex-direction:column;gap:8px;
+  background-image:repeating-linear-gradient(45deg, rgba(0,0,0,0.02) 0 2px, transparent 2px 4px);
+  flex:1;
+}
+.test-wa-bubble{
+  background:#DCF8C6;color:#111;
+  padding:8px 12px;border-radius:8px 8px 8px 2px;font-size:.92rem;line-height:1.4;
+  align-self:flex-start;max-width:90%;
+  box-shadow:0 1px 0.5px rgba(11,20,26,0.13);
+  position:relative;
+}
+.test-wa-time{font-size:.66rem;color:rgba(0,0,0,0.45);text-align:right;margin-top:4px;font-family:var(--sans)}
 
-/* TICKER */
-.ticker-wrap{
-  overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  background:var(--bg-1);padding:14px 0;
+/* IG-style testimonial */
+.test-ig{
+  padding:0;overflow:hidden;background:#fff;
 }
-.ticker{
-  display:flex;gap:48px;white-space:nowrap;
-  animation:scroll 60s linear infinite;
-  font-family:var(--mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--fg-soft);
+.test-ig-header{
+  display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid #efefef;
 }
-.ticker-item{display:inline-flex;align-items:center;gap:14px}
-.ticker-item .dot{width:6px;height:6px;background:var(--accent);border-radius:50%}
-@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.test-ig-avatar{
+  width:32px;height:32px;border-radius:50%;
+  background:linear-gradient(135deg,#FED373,#F15245,#D92E7F,#9B36B7);padding:2px;
+}
+.test-ig-avatar > div{
+  width:100%;height:100%;border-radius:50%;background:var(--accent-soft);color:var(--accent);
+  display:grid;place-items:center;font-family:var(--serif);font-size:.78rem;font-weight:700;
+}
+.test-ig-handle{font-size:.86rem;font-weight:600;color:#262626}
+.test-ig-body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:10px}
+.test-ig-actions{display:flex;gap:14px;font-size:1.2rem;color:#262626}
+.test-ig-quote{font-size:.93rem;line-height:1.45;color:#262626;margin:0}
+.test-ig-quote strong{font-weight:600;color:#262626}
+.test-ig-handle-quote{font-weight:600;color:#262626;margin-right:6px}
+.test-ig-time{font-size:.66rem;color:#8e8e8e;letter-spacing:.04em;text-transform:uppercase;margin-top:4px}
 
-/* SECTIONS */
-.section{padding:var(--pad-section) 0;border-bottom:1px solid var(--line)}
-.section-eyebrow{
-  font-family:var(--mono);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--fg-mute);margin-bottom:14px;
+/* STATS */
+.stats-row{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:24px;
+  text-align:center;
+  padding:48px 0;border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);
 }
-.section-title{
-  font-family:var(--display);font-weight:700;
-  font-size:clamp(2rem, 4.5vw, 3.6rem);
-  line-height:1;letter-spacing:-.01em;
-  margin:0 0 18px;text-transform:uppercase;
+@media(max-width:780px){.stats-row{grid-template-columns:repeat(2,1fr);gap:36px 24px}}
+.stat-num{
+  font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.4rem);font-weight:700;
+  letter-spacing:-0.025em;line-height:1;color:var(--highlight);
+  margin-bottom:8px;
 }
-.section-sub{
-  font-size:1.05rem;color:var(--fg-soft);max-width:680px;margin:0 0 0;line-height:1.55;
-}
-.section-header{margin-bottom:60px}
-
-/* VENN — three-circle visual */
-.venn-wrap{
-  position:relative;display:flex;justify-content:center;align-items:center;
-  margin: 30px auto 64px;max-width:760px;
-}
-.venn{
-  position:relative;width:100%;aspect-ratio: 1 / 0.92;
-  font-family:var(--display);text-transform:uppercase;font-weight:700;
-}
-.venn svg{position:absolute;inset:0;width:100%;height:100%}
-.venn-label{
-  position:absolute;text-align:center;font-size:clamp(.7rem,1.5vw,1rem);
-  letter-spacing:.04em;line-height:1.1;
-}
-.venn-label.top{top:6%;left:50%;transform:translateX(-50%);width:30%}
-.venn-label.left{bottom:14%;left:6%;width:30%}
-.venn-label.right{bottom:14%;right:6%;width:30%}
-.venn-label.center{
-  top:50%;left:50%;transform:translate(-50%,-25%);width:24%;
-  color:#000;font-size:clamp(.66rem,1.4vw,.92rem);
-}
-.venn-label.center strong{display:block;font-size:1.05em;color:#000}
-
-@media(max-width:600px){
-  .venn-label.top{top:3%}
-  .venn-label.left{bottom:8%}
-  .venn-label.right{bottom:8%}
-}
-
-/* PERFILES (3 cards) */
-.perfiles{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
-}
-@media(max-width:900px){.perfiles{grid-template-columns:1fr}}
-.perfil{
-  background:var(--bg-1);border:1px solid var(--line);
-  padding:36px 28px 32px;border-radius:0;
-  position:relative;transition:border-color .2s, transform .2s;
-}
-.perfil:hover{border-color:var(--accent);transform:translateY(-4px)}
-.perfil-num{
-  font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--fg-mute);margin-bottom:24px;display:flex;justify-content:space-between;align-items:center;
-}
-.perfil-num span:last-child{color:var(--accent)}
-.perfil-title{
-  font-family:var(--display);font-weight:700;text-transform:uppercase;
-  font-size:1.6rem;line-height:1;letter-spacing:-.005em;margin:0 0 18px;
-}
-.perfil-desc{font-size:.98rem;color:var(--fg-soft);margin:0 0 22px}
-.perfil-bullets{list-style:none;padding:0;margin:0;display:grid;gap:10px}
-.perfil-bullets li{
-  position:relative;padding-left:22px;font-size:.94rem;color:var(--fg-soft);line-height:1.5;
-}
-.perfil-bullets li::before{
-  content:"+";position:absolute;left:0;top:0;color:var(--accent);font-weight:700;
-}
-
-/* DOSSIER (composición) */
-.dossier-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;
-}
-@media(max-width:900px){.dossier-grid{grid-template-columns:1fr}}
-
-.dossier{
-  background:var(--bg-1);border:1px solid var(--line);
-  padding:24px;font-family:var(--mono);
-}
-.dossier-header{
-  display:flex;justify-content:space-between;align-items:center;
-  font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--fg-mute);padding-bottom:14px;border-bottom:1px solid var(--line);margin-bottom:6px;
-}
-.dossier-header .live{color:var(--accent)}
-.dossier-row{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:14px 0;border-bottom:1px dashed var(--line);
-}
-.dossier-row:last-child{border-bottom:0}
-.dossier-row .label{font-size:.84rem;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-mute)}
-.dossier-row .value{font-size:1.02rem;color:var(--fg);font-weight:700}
-.dossier-row .value.alert{color:var(--accent)}
-
-.dossier-copy h3{
-  font-family:var(--display);font-weight:700;text-transform:uppercase;
-  font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.05;margin:0 0 18px;
-}
-.dossier-copy p{color:var(--fg-soft);margin:0 0 14px}
-.dossier-copy strong{color:var(--fg)}
-.dossier-copy .uba{
-  display:inline-flex;align-items:center;gap:10px;margin-top:18px;
-  padding:10px 14px;background:rgba(92,201,123,.08);border:1px solid rgba(92,201,123,.3);
-  border-radius:4px;
-  font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;
-  color:var(--success);
-}
-.dossier-copy .uba a{color:var(--success);text-decoration:underline;text-underline-offset:3px}
-
-/* MANIFESTO */
-.manifesto{
-  text-align:center;max-width:820px;margin:0 auto;
-}
-.manifesto h2{
-  font-family:var(--display);font-weight:700;text-transform:uppercase;
-  font-size:clamp(2rem,4.5vw,3.4rem);line-height:1;margin:0 0 28px;
-}
-.manifesto p{font-size:1.1rem;color:var(--fg-soft);margin:0 0 16px}
-.manifesto p strong{color:var(--fg)}
-.manifesto .signature{
-  margin-top:36px;font-family:var(--mono);font-size:.76rem;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--fg-mute);
-}
+.stat-label{font-size:.86rem;color:var(--fg-on-dark-mute);font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase}
 
 /* OFFER */
-.offer{
+.offer-section{
+  background:var(--bg-3);
   position:relative;
-  background:linear-gradient(180deg, var(--bg-1) 0%, var(--bg) 100%);
+  overflow:hidden;
 }
 .offer-grid{
-  display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;
+  display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,5vw,64px);align-items:center;
 }
 @media(max-width:900px){.offer-grid{grid-template-columns:1fr}}
 
-.coupon{
-  background:#000;border:2px dashed var(--accent);padding:36px 32px;
-  font-family:var(--mono);text-align:center;
+.offer-product{
+  background:var(--bg-2);border-radius:var(--radius-lg);
+  padding:36px;aspect-ratio:1/1;
+  display:grid;place-items:center;
+  border:1px solid var(--line);box-shadow:var(--shadow-card);
   position:relative;
 }
-.coupon::before,.coupon::after{
-  content:"";position:absolute;width:24px;height:24px;background:var(--bg);border-radius:50%;
+.offer-product img{width:78%;filter:drop-shadow(0 24px 40px rgba(20,17,14,0.2));transform:rotate(-3deg);transition:transform .5s}
+.offer-product:hover img{transform:rotate(-1deg) scale(1.03)}
+.offer-product-stamp{
+  position:absolute;top:24px;right:24px;
+  width:84px;height:84px;border-radius:50%;
+  background:var(--accent);color:#fff;
+  display:grid;place-items:center;text-align:center;
+  font-family:var(--serif);font-weight:700;line-height:1;
+  transform:rotate(8deg);
+  box-shadow:0 8px 18px rgba(201,70,26,0.4);
 }
-.coupon::before{left:-12px;top:50%;transform:translateY(-50%)}
-.coupon::after{right:-12px;top:50%;transform:translateY(-50%)}
-.coupon-label{
-  font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-mute);margin-bottom:12px;
-}
-.coupon-code{
-  font-size:clamp(1.4rem, 3vw, 2.2rem);font-weight:700;color:var(--accent);
-  letter-spacing:.04em;margin:0 0 12px;word-break:break-all;
-}
-.coupon-discount{
-  font-size:.92rem;color:var(--fg-soft);margin:0 0 18px;
-}
-.coupon-discount strong{color:var(--accent);font-size:1.1rem}
-.coupon-copy{
-  display:inline-flex;align-items:center;gap:8px;
-  font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--fg-mute);cursor:pointer;
-  border:1px solid var(--line-2);padding:8px 14px;border-radius:4px;
-  transition:all .15s;background:transparent;font-family:inherit;
-}
-.coupon-copy:hover{border-color:var(--accent);color:var(--accent)}
+.offer-product-stamp .big{font-size:1.6rem;display:block;margin-bottom:2px}
+.offer-product-stamp .sm{font-size:.66rem;letter-spacing:.06em;font-family:var(--mono);font-weight:500}
 
-.offer-copy h2{
-  font-family:var(--display);font-weight:700;text-transform:uppercase;
-  font-size:clamp(2rem,4.5vw,3.2rem);line-height:1;margin:0 0 24px;
+.offer-copy h2{margin-bottom:18px}
+.offer-copy h2 em{color:var(--accent);font-style:italic}
+.offer-copy .lead{font-size:1.1rem;color:var(--fg-soft);margin-bottom:28px;max-width:480px}
+
+.price-stack{
+  background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius-lg);
+  padding:24px;margin-bottom:24px;
 }
-.offer-copy p{color:var(--fg-soft);margin:0 0 16px;font-size:1.05rem}
-.offer-copy strong{color:var(--fg)}
-.offer-copy .stack{
-  margin:24px 0;padding:18px 20px;
-  background:var(--bg-1);border:1px solid var(--line);border-radius:0;
-}
-.offer-copy .stack-item{
+.price-row{
   display:flex;justify-content:space-between;align-items:center;
-  padding:8px 0;font-family:var(--mono);font-size:.92rem;
+  padding:9px 0;font-size:.95rem;color:var(--fg-soft);
+  border-bottom:1px dashed var(--line);
 }
-.offer-copy .stack-item .label{color:var(--fg-soft)}
-.offer-copy .stack-item .value{color:var(--fg);font-weight:700}
-.offer-copy .stack-item.total{
-  border-top:1px solid var(--line);padding-top:14px;margin-top:8px;
-  font-size:1.05rem;
+.price-row:last-of-type{border-bottom:0}
+.price-row .label{display:flex;align-items:center;gap:8px}
+.price-row .label::before{content:"+";color:var(--accent);font-weight:700;font-size:1rem}
+.price-row .value{font-weight:500;color:var(--fg);font-family:var(--mono);font-size:.92rem}
+.price-row.total{
+  margin-top:14px;padding-top:18px;border-top:1.5px solid var(--fg);border-bottom:0;
 }
-.offer-copy .stack-item.total .label{color:var(--accent);text-transform:uppercase;letter-spacing:.06em}
-.offer-copy .stack-item.total .value{color:var(--accent);font-size:1.4rem}
-.offer-copy .stack-item .strike{text-decoration:line-through;color:var(--fg-mute);margin-right:8px}
+.price-row.total .label{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--fg)}
+.price-row.total .label::before{content:""}
+.price-row.total .value{font-family:var(--serif);font-size:1.7rem;font-weight:700;color:var(--accent);letter-spacing:-0.02em}
+.price-strike{text-decoration:line-through;color:var(--fg-mute);margin-right:10px;font-size:.92rem;font-family:var(--mono)}
 
-.guarantee{
-  margin-top:24px;padding:18px 20px;
-  background:rgba(92,201,123,.06);border:1px solid rgba(92,201,123,.3);
-  display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;
+.coupon-pill{
+  display:flex;align-items:center;gap:14px;padding:14px 18px;
+  background:var(--highlight-soft);border:1.5px dashed var(--highlight);
+  border-radius:var(--radius);
+  margin:20px 0;
 }
+.coupon-pill-icon{font-size:1.4rem;flex-shrink:0}
+.coupon-pill-text{flex:1;font-size:.92rem;color:var(--fg-soft);line-height:1.35}
+.coupon-pill-text strong{font-family:var(--mono);font-size:1rem;color:var(--fg);letter-spacing:.04em;font-weight:700}
+.coupon-copy-btn{
+  background:var(--fg);color:var(--bg-2);
+  font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;
+  padding:8px 14px;border-radius:var(--radius-pill);font-weight:500;
+  transition:background .15s;white-space:nowrap;
+}
+.coupon-copy-btn:hover{background:var(--accent)}
+
+.offer-extra{
+  display:flex;flex-wrap:wrap;gap:12px 22px;align-items:center;
+  font-size:.86rem;color:var(--fg-mute);font-weight:500;margin-top:22px;
+}
+.offer-extra-item{display:inline-flex;align-items:center;gap:6px}
+.offer-extra-item svg{width:14px;height:14px;color:var(--success)}
+
+/* GUARANTEE */
+.guarantee-card{
+  background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius-lg);
+  padding:36px;
+  display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;
+  max-width:880px;margin:0 auto;
+  box-shadow:var(--shadow-card);
+}
+@media(max-width:680px){.guarantee-card{grid-template-columns:1fr;text-align:center;padding:32px 24px}.guarantee-icon{justify-self:center}}
 .guarantee-icon{
-  width:44px;height:44px;border-radius:50%;
-  background:rgba(92,201,123,.12);
-  display:grid;place-items:center;font-size:1.4rem;
+  width:90px;height:90px;border-radius:50%;
+  background:var(--success-soft);color:var(--success);
+  display:grid;place-items:center;font-size:2.2rem;
+  flex-shrink:0;
 }
-.guarantee h4{margin:0 0 4px;font-size:.94rem;color:var(--success);text-transform:uppercase;letter-spacing:.08em;font-family:var(--mono)}
-.guarantee p{margin:0;font-size:.9rem;color:var(--fg-soft)}
-
-/* STOCK STATUS */
-.cupos-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;
-}
-@media(max-width:900px){.cupos-grid{grid-template-columns:1fr}}
-.cupos-meter{
-  background:var(--bg-1);border:1px solid var(--line);padding:32px;
-}
-.cupos-meter-header{
-  display:flex;justify-content:space-between;align-items:center;
-  font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--fg-mute);margin-bottom:18px;
-}
-.cupos-meter-header span:last-child{color:var(--accent)}
-.cupos-meter-numbers{
-  display:flex;align-items:baseline;gap:12px;margin-bottom:24px;
-}
-.cupos-current{
-  font-family:var(--display);font-weight:700;font-size:clamp(3.5rem,8vw,5.5rem);
-  line-height:1;color:var(--accent);letter-spacing:-.02em;
-}
-.cupos-total{
-  font-family:var(--mono);font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--fg-mute);
-}
-.progress-bar{
-  height:8px;background:rgba(255,255,255,.06);border-radius:0;overflow:hidden;
-  margin-bottom:18px;
-}
-.progress-bar-fill{
-  height:100%;width:0;background:linear-gradient(90deg, var(--accent) 0%, #ffd87a 100%);
-  transition:width 1.6s cubic-bezier(.2,.7,.2,1) .3s;
-}
-.progress-bar.is-visible .progress-bar-fill{width:88%}
-.cupos-foot{
-  font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--fg-mute);
-}
+.guarantee-card h3{margin:0 0 6px;font-size:1.5rem;font-weight:600}
+.guarantee-card p{margin:0;font-size:1rem;color:var(--fg-soft);line-height:1.5}
 
 /* FAQ */
-.faq{max-width:780px;margin:0 auto}
+.faq{max-width:760px;margin:48px auto 0}
 .faq-item{
   border-bottom:1px solid var(--line);
 }
-.faq-question{
-  display:flex;justify-content:space-between;align-items:center;gap:20px;
-  padding:24px 0;cursor:pointer;user-select:none;
+.faq-item summary{
+  list-style:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:space-between;gap:18px;
+  padding:22px 0;
+  font-family:var(--serif);font-size:1.15rem;font-weight:600;
+  letter-spacing:-0.01em;
   transition:color .15s;
 }
-.faq-question:hover{color:var(--accent)}
-.faq-num{
-  font-family:var(--mono);font-size:.78rem;letter-spacing:.12em;color:var(--fg-mute);min-width:30px;
-}
-.faq-text{
-  flex:1;font-family:var(--display);font-weight:700;text-transform:uppercase;
-  font-size:1.1rem;letter-spacing:-.005em;
-}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary:hover{color:var(--accent)}
 .faq-toggle{
-  font-family:var(--mono);font-size:1.4rem;color:var(--fg-mute);transition:transform .2s, color .2s;
+  width:28px;height:28px;border-radius:50%;
+  background:var(--bg-3);color:var(--fg);
+  display:grid;place-items:center;
+  font-size:1.2rem;font-weight:300;
+  flex-shrink:0;transition:transform .25s, background .2s, color .2s;
 }
-.faq-item.open .faq-toggle{transform:rotate(45deg);color:var(--accent)}
-.faq-item.open .faq-question{color:var(--accent)}
-.faq-answer{
-  max-height:0;overflow:hidden;transition:max-height .3s ease;
+.faq-item[open] .faq-toggle{transform:rotate(45deg);background:var(--accent);color:#fff}
+.faq-body{
+  padding:0 0 22px;font-size:1rem;color:var(--fg-soft);line-height:1.6;max-width:90%;
 }
-.faq-item.open .faq-answer{max-height:400px}
-.faq-answer-inner{
-  padding:0 0 24px 40px;color:var(--fg-soft);font-size:.98rem;line-height:1.6;
-}
+.faq-body strong{color:var(--fg)}
+.faq-body code{font-family:var(--mono);background:var(--highlight-soft);padding:2px 6px;border-radius:4px;font-size:.92em;color:var(--fg);font-weight:600}
 
 /* FINAL CTA */
 .final-cta{
   text-align:center;padding:var(--pad-section) 24px;
-  background:linear-gradient(180deg, var(--bg) 0%, #050506 100%);
+  background:var(--bg-dark);color:var(--fg-on-dark);
 }
-.final-cta-eyebrow{
-  font-family:var(--mono);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--accent);margin-bottom:20px;
+.final-cta h2{margin-bottom:24px}
+.final-cta h2 em{color:var(--highlight);font-style:italic}
+.final-cta p{font-size:1.1rem;color:var(--fg-on-dark-mute);max-width:620px;margin:0 auto 16px}
+.final-cta .lead-emph{
+  font-family:var(--serif);font-size:clamp(1.3rem,2.2vw,1.7rem);color:var(--fg-on-dark);font-weight:500;
+  margin:24px auto 36px;max-width:680px;font-style:italic;
 }
-.final-cta-title{
-  font-family:var(--display);font-weight:700;text-transform:uppercase;
-  font-size:clamp(2.4rem,7vw,5.5rem);line-height:1;margin:0 0 28px;
+.final-cta .code-tag{
+  font-family:var(--mono);font-size:.84rem;color:var(--fg-on-dark-mute);
+  margin-top:18px;letter-spacing:.04em;
 }
-.final-cta-text{
-  font-size:1.1rem;color:var(--fg-soft);max-width:680px;margin:0 auto 16px;
-}
-.final-cta-text strong{color:var(--fg)}
-.final-cta-emph{
-  font-size:1.15rem;color:var(--fg);font-weight:700;max-width:680px;margin:0 auto 36px;
-}
-.final-cta-emph em{color:var(--accent);font-style:normal}
+.final-cta .code-tag strong{color:var(--highlight);letter-spacing:.06em;font-weight:700}
 
 /* FOOTER */
 .footer{
-  text-align:center;padding:60px 24px 80px;background:#050506;
-  border-top:1px solid var(--line);
+  padding:50px 24px 70px;background:#0A0807;color:rgba(247,242,232,0.6);
+  border-top:1px solid var(--line-dark);text-align:center;
 }
-.footer-logo{height:36px;width:auto;filter:invert(1) brightness(2);margin:0 auto 18px}
-.footer-text{margin:6px 0;font-size:.92rem;color:var(--fg-mute)}
+.footer-logo{height:30px;width:auto;margin:0 auto 18px;filter:invert(1) brightness(2)}
+.footer p{margin:6px 0;font-size:.9rem;color:rgba(247,242,232,0.55)}
+.footer-links{
+  margin-top:24px;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;
+  font-size:.85rem;
+}
+.footer-links a{color:rgba(247,242,232,0.7);transition:color .15s}
+.footer-links a:hover{color:var(--highlight)}
 .footer-meta{
-  margin-top:24px;padding-top:24px;border-top:1px solid var(--line);
-  font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;color:var(--fg-mute);
+  margin-top:24px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.08);
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:rgba(247,242,232,0.4);
 }
-.footer-meta a{color:var(--fg-soft);text-decoration:underline;text-underline-offset:3px}
 
-/* Sticky mobile CTA */
-.sticky-cta{
+/* STICKY MOBILE CTA */
+.sticky-bottom{
   position:fixed;left:12px;right:12px;bottom:12px;z-index:50;
-  background:rgba(10,10,11,0.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  border:1px solid var(--line-2);padding:12px;
-  display:flex;gap:12px;align-items:center;
-  transform:translateY(150%);transition:transform .3s;
+  background:var(--fg);color:var(--bg-2);
+  border-radius:var(--radius-pill);
+  padding:10px 14px;
+  display:flex;align-items:center;gap:12px;
+  transform:translateY(150%);transition:transform .35s;
+  box-shadow:0 18px 40px -10px rgba(20,17,14,0.5);
 }
-.sticky-cta.is-visible{transform:translateY(0)}
-.sticky-cta-copy{flex:1;min-width:0}
-.sticky-cta-title{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-mute)}
-.sticky-cta-price{font-family:var(--display);font-weight:700;font-size:1.05rem;color:var(--fg)}
-.sticky-cta .cta{padding:12px 18px;font-size:.78rem}
-@media(min-width:900px){.sticky-cta{display:none}}
+.sticky-bottom.visible{transform:translateY(0)}
+.sticky-bottom-text{flex:1;min-width:0}
+.sticky-bottom-title{font-size:.72rem;color:rgba(247,242,232,0.65);font-weight:500}
+.sticky-bottom-price{font-family:var(--serif);font-size:1.05rem;font-weight:700}
+.sticky-bottom .btn{padding:11px 18px;font-size:.85rem;background:var(--highlight);color:var(--fg);border-color:var(--highlight)}
+.sticky-bottom .btn:hover{background:#fff;border-color:#fff;box-shadow:none}
+@media(min-width:900px){.sticky-bottom{display:none}}
 
-/* Section divider */
-.section-divider{
-  height:1px;background:var(--line);margin:0;
+/* SCROLL ANIMATIONS */
+.fade-up{
+  opacity:0;transform:translateY(20px);
+  transition:opacity .6s ease, transform .6s ease;
 }
+.fade-up.visible{opacity:1;transform:translateY(0)}
 
-/* Selection */
-::selection{background:var(--accent);color:#000}
-
+/* utility */
+.tc{text-align:center}
+.mt-0{margin-top:0}
+.mb-0{margin-bottom:0}
 </style>
 </head>
 <body>
 
-<div class="grain"></div>
-<div class="scanlines"></div>
-<div class="vignette"></div>
-
-<div class="frame">
-
-  <!-- UTIL BAR -->
-  <div class="util-bar">
-    <div class="left">
-      <span><span class="live-dot"></span>EN VIVO</span>
-      <span style="opacity:.7">300mg de cafeína por taza</span>
-    </div>
-    <div class="center">Stock disponible · <span id="stock-count">163</span> packs</div>
-    <div class="right">
-      <span id="ts">14:32:11</span>
-      <span style="opacity:.7">Buenos Aires</span>
-    </div>
-  </div>
-
-  <!-- NAV -->
-  <nav class="nav">
-    <a href="#"><img class="nav-logo" src="https://acdn-us.mitiendanube.com/stores/003/104/793/themes/common/logo-1702573383-1683748864-96f5d266512f581b76e3211392a287351683748864-640-0.png" alt="SHOCK COFFEE" /></a>
-    <div class="nav-links">
-      <a href="#perfiles">PARA QUIÉN</a>
-      <a href="#composicion">QUÉ ES</a>
-      <a href="#oferta">OFERTA</a>
-      <a href="#faq">FAQ</a>
-    </div>
-    <a class="nav-cta" href="#oferta">&gt; LO QUIERO</a>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-eyebrow">Sistema de combustible · Lote 04/26</div>
-      <h1 class="headline">
-        <span class="headline-line"><span>ESTO</span></span>
-        <span class="headline-line"><span>ES PARA</span></span>
-        <span class="headline-line"><span class="shock-glitch" data-text="VOS.">VOS.</span></span>
-      </h1>
-      <p class="hero-lede"><strong>Hacés ayuno. Laburás como un poseso. Entrenás cuando podés.</strong> Y todavía no encontraste algo que te aguante las tres cosas a la vez sin que te tiemble la mano.</p>
-      <p class="hero-lede" style="font-size:1rem;color:var(--fg-mute)">Encontramos lo que esos tres perfiles tienen en común. Y es esto.</p>
-
-      <div class="hero-tags">
-        <span class="hero-tag">GENTE QUE HACE AYUNO</span>
-        <span class="hero-tag">GENTE QUE LABURA DURO</span>
-        <span class="hero-tag">GENTE QUE ENTRENA FUERTE</span>
-        <span class="hero-tag match">⚡ GENTE QUE TOMA SHOCK</span>
-      </div>
-
-      <div class="cta-row">
-        <a href="#oferta" class="cta">
-          <span>QUIERO PROBARLO</span>
-          <span class="cta-arrow">→</span>
-        </a>
-        <span class="cta-meta">10% OFF CON CÓDIGO · GARANTÍA 7 DÍAS</span>
-      </div>
-
-      <div class="scroll-hint">
-        <span>Bajá para entender por qué</span>
-        <span class="cursor-blink"></span>
-      </div>
-    </div>
-  </section>
-
-  <!-- TICKER -->
-  <div class="ticker-wrap">
-    <div class="ticker">
-      <span class="ticker-item"><span class="dot"></span>300 MG DE CAFEÍNA · 3X UN CAFÉ COMÚN</span>
-      <span class="ticker-item"><span class="dot"></span>CERTIFICADO POR LA UBA</span>
-      <span class="ticker-item"><span class="dot"></span>0 AZÚCAR · 0 CALORÍAS · 0 ACIDEZ</span>
-      <span class="ticker-item"><span class="dot"></span>72H DE TOSTADO PRE-ENVÍO</span>
-      <span class="ticker-item"><span class="dot"></span>+22.000 PACKS VENDIDOS</span>
-      <span class="ticker-item"><span class="dot"></span>ENVÍO A TODO EL PAÍS</span>
-      <span class="ticker-item"><span class="dot"></span>300 MG DE CAFEÍNA · 3X UN CAFÉ COMÚN</span>
-      <span class="ticker-item"><span class="dot"></span>CERTIFICADO POR LA UBA</span>
-      <span class="ticker-item"><span class="dot"></span>0 AZÚCAR · 0 CALORÍAS · 0 ACIDEZ</span>
-      <span class="ticker-item"><span class="dot"></span>72H DE TOSTADO PRE-ENVÍO</span>
-      <span class="ticker-item"><span class="dot"></span>+22.000 PACKS VENDIDOS</span>
-      <span class="ticker-item"><span class="dot"></span>ENVÍO A TODO EL PAÍS</span>
-    </div>
-  </div>
-
-  <!-- VENN + PERFILES -->
-  <section class="section" id="perfiles">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-eyebrow">Diagrama operativo</div>
-        <h2 class="section-title">ENCONTRAMOS LO<br />QUE TIENEN EN COMÚN</h2>
-        <p class="section-sub">No es casualidad. Las tres cosas requieren lo mismo: <strong>energía limpia, sostenida y sin caída.</strong> Y nada del mercado te lo da.</p>
-      </div>
-
-      <!-- VENN DIAGRAM -->
-      <div class="venn-wrap">
-        <div class="venn">
-          <svg viewBox="0 0 600 540" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <defs>
-              <filter id="vennGlow">
-                <feGaussianBlur stdDeviation="2" />
-              </filter>
-            </defs>
-            <!-- Yellow center fill (clipped intersection) -->
-            <mask id="topMask"><rect width="600" height="540" fill="black"/><circle cx="300" cy="180" r="170" fill="white"/></mask>
-            <mask id="leftMask"><rect width="600" height="540" fill="black"/><circle cx="210" cy="340" r="170" fill="white"/></mask>
-            <mask id="rightMask"><rect width="600" height="540" fill="black"/><circle cx="390" cy="340" r="170" fill="white"/></mask>
-            <g>
-              <circle cx="210" cy="340" r="170" fill="rgba(245,184,67,0.18)" mask="url(#topMask)"/>
-              <circle cx="390" cy="340" r="170" fill="rgba(245,184,67,0.18)" mask="url(#topMask)"/>
-              <circle cx="390" cy="340" r="170" fill="rgba(245,184,67,0.55)" mask="url(#leftMask)"/>
-            </g>
-            <!-- Strokes -->
-            <circle cx="300" cy="180" r="170" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.5"/>
-            <circle cx="210" cy="340" r="170" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.5"/>
-            <circle cx="390" cy="340" r="170" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.5"/>
-          </svg>
-          <div class="venn-label top">GENTE QUE<br/>HACE AYUNO</div>
-          <div class="venn-label left">GENTE CON<br/>MUCHO LABURO</div>
-          <div class="venn-label right">GENTE QUE<br/>ENTRENA FUERTE</div>
-          <div class="venn-label center">
-            <strong>GENTE QUE TOMA</strong>
-            SHOCK COFFEE
-          </div>
-        </div>
-      </div>
-
-      <div class="perfiles">
-
-        <article class="perfil">
-          <div class="perfil-num"><span>01</span><span>AYUNO</span></div>
-          <h3 class="perfil-title">Si hacés<br/>ayuno...</h3>
-          <p class="perfil-desc">El café común te da 2 horas y crash. SHOCK te corta el hambre hasta el mediodía sin que tengas que tirar de fuerza de voluntad.</p>
-          <ul class="perfil-bullets">
-            <li>Cafeína suprime grelina (la hormona del hambre).</li>
-            <li>Acelera la quema de grasa: tu cuerpo usa lo que tenés guardado.</li>
-            <li>0 calorías, 0 azúcar: no rompés el ayuno.</li>
-          </ul>
-        </article>
-
-        <article class="perfil">
-          <div class="perfil-num"><span>02</span><span>LABURO</span></div>
-          <h3 class="perfil-title">Si laburás<br/>duro...</h3>
-          <p class="perfil-desc">Los días en que no podés permitirte 4 horas de niebla mental, SHOCK te da foco parejo de la mañana hasta la tarde. Sin taquicardia.</p>
-          <ul class="perfil-bullets">
-            <li>3x más cafeína que un café de filtro común.</li>
-            <li>Energía sostenida 6-8 horas. Sin pico ni caída.</li>
-            <li>Más cafeína = más dopamina = más foco real.</li>
-          </ul>
-        </article>
-
-        <article class="perfil">
-          <div class="perfil-num"><span>03</span><span>ENTRENO</span></div>
-          <h3 class="perfil-title">Si entrenás<br/>fuerte...</h3>
-          <p class="perfil-desc">Tomá una taza 30 min antes y entrenás como si hubieses comido. Más fuerza, más reps, mejor rendimiento. Pre-workout natural.</p>
-          <ul class="perfil-bullets">
-            <li>Mejora el rendimiento aeróbico y de fuerza.</li>
-            <li>Reduce la percepción de esfuerzo: empujás más.</li>
-            <li>Sin azúcar ni estimulantes raros. Solo cafeína buena.</li>
-          </ul>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- COMPOSICION / DOSSIER -->
-  <section class="section" id="composicion">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-eyebrow">Composición</div>
-        <h2 class="section-title">QUÉ TIENE<br/>ADENTRO</h2>
-      </div>
-
-      <div class="dossier-grid">
-        <div class="dossier-copy">
-          <h3>NO ES UN CAFÉ COMÚN<br/>ES UNA HERRAMIENTA</h3>
-          <p>SHOCK es el único café del país <strong>diseñado para hacer</strong>. Mezcla específica de granos + un método de tostado que desarrollamos nosotros para <strong>maximizar la cafeína sin romper el sabor</strong>.</p>
-          <p>Nada de "energy drinks" con química rara. Solo café. <strong>Pero el café que necesitás cuando lo único que querés es no fallar el día.</strong></p>
-          <a href="https://drive.google.com/file/d/1yugzNrY8MLaCxgC1BP04J1jD93WH0gDE/view" target="_blank" rel="noopener" class="uba">
-            ✓ ANÁLISIS UBA · Verificá los resultados
-          </a>
-        </div>
-
-        <aside class="dossier">
-          <div class="dossier-header">
-            <span>Datos del lote</span>
-            <span class="live"><span class="live-dot"></span>EN VIVO</span>
-          </div>
-          <div class="dossier-row">
-            <span class="label">Cafeína por taza</span>
-            <span class="value">300 mg</span>
-          </div>
-          <div class="dossier-row">
-            <span class="label">vs. café de filtro común</span>
-            <span class="value alert">3 x más</span>
-          </div>
-          <div class="dossier-row">
-            <span class="label">Azúcar</span>
-            <span class="value">0 g</span>
-          </div>
-          <div class="dossier-row">
-            <span class="label">Calorías</span>
-            <span class="value">0 kcal</span>
-          </div>
-          <div class="dossier-row">
-            <span class="label">Acidez</span>
-            <span class="value">Baja</span>
-          </div>
-          <div class="dossier-row">
-            <span class="label">Tostado pre-envío</span>
-            <span class="value">72 h</span>
-          </div>
-          <div class="dossier-row">
-            <span class="label">Análisis UBA</span>
-            <span class="value alert">✓ Validado</span>
-          </div>
-          <div class="dossier-row">
-            <span class="label">Packs vendidos</span>
-            <span class="value">+22.000</span>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <!-- MANIFESTO -->
-  <section class="section">
-    <div class="container">
-      <div class="manifesto">
-        <h2>EL MUNDO ES<br/>DE LOS QUE HACEN.</h2>
-        <p>El que ayuna, el que labura, el que entrena. <strong>No estás esperando que las cosas pasen. Las hacés.</strong></p>
-        <p>Pero hacer cuesta. Y nadie habla del costo: la cabeza nublada a las 11, el bajón post-almuerzo, la energía que no alcanza para la sesión de la tarde.</p>
-        <p><strong>SHOCK es la herramienta. La parte que faltaba.</strong></p>
-        <p style="margin-top:24px;color:var(--fg-mute)">No te promete que vas a ser distinto. Te da los 8 watts extra que te faltaban para ser el que ya querías ser.</p>
-        <div class="signature">— Lucas, fundador de SHOCK COFFEE</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- OFFER -->
-  <section class="section offer" id="oferta">
-    <div class="container">
-      <div class="offer-grid">
-        <div class="offer-copy">
-          <div class="section-eyebrow">Oferta exclusiva</div>
-          <h2>10% OFF<br/>HOY</h2>
-          <p><strong>Empezá con el Sample Pack</strong>: el clásico de 250g + 4 sabores de 50g para que pruebes todo y elijas tu favorito.</p>
-
-          <div class="stack">
-            <div class="stack-item">
-              <span class="label">Shock clásico 250g</span>
-              <span class="value">$28.000</span>
-            </div>
-            <div class="stack-item">
-              <span class="label">4 sabores x 50g</span>
-              <span class="value">$20.000</span>
-            </div>
-            <div class="stack-item">
-              <span class="label">Manual de consumo</span>
-              <span class="value">Incluido</span>
-            </div>
-            <div class="stack-item">
-              <span class="label">Cuchara dosificadora</span>
-              <span class="value">Incluida</span>
-            </div>
-            <div class="stack-item total">
-              <span class="label">CON 10% OFF</span>
-              <span class="value"><span class="strike">$38.000</span>$34.200</span>
-            </div>
-          </div>
-
-          <div class="cta-row" style="margin-top:8px">
-            <a href="https://theshockcoffee.com/productos/shock-sample-pack-450g/" class="cta" data-cta="offer-primary">
-              <span>USAR EL CÓDIGO Y COMPRAR</span>
-              <span class="cta-arrow">→</span>
-            </a>
-          </div>
-
-          <div class="guarantee">
-            <div class="guarantee-icon">🛡</div>
-            <div>
-              <h4>Garantía 7 días</h4>
-              <p>Si no notás más energía, menos hambre y mejor foco, te devolvemos el 100%. Sin preguntas.</p>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="coupon">
-            <div class="coupon-label">Código exclusivo</div>
-            <div class="coupon-code" id="coupon-code">TENGOCOSASQUEHACER</div>
-            <div class="coupon-discount"><strong>10% OFF</strong> aplicable al checkout</div>
-            <button class="coupon-copy" id="coupon-copy-btn" type="button">
-              <span id="copy-text">📋 COPIAR CÓDIGO</span>
-            </button>
-          </div>
-          <p style="margin-top:18px;font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-mute);text-align:center">
-            Pegá el código en el carrito al finalizar la compra
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- STOCK / SCARCITY -->
-  <section class="section">
-    <div class="container">
-      <div class="cupos-grid">
-        <div class="cupos-meter">
-          <div class="cupos-meter-header">
-            <span>Stock del lote</span>
-            <span><span class="live-dot"></span>EN VIVO</span>
-          </div>
-          <div class="cupos-meter-numbers">
-            <span class="cupos-current" id="cupos-current">163</span>
-            <span class="cupos-total">PACKS<br/>DISPONIBLES</span>
-          </div>
-          <div class="progress-bar" id="progressBar">
-            <div class="progress-bar-fill"></div>
-          </div>
-          <div class="cupos-foot">88% del lote ya se vendió</div>
-        </div>
-
-        <div>
-          <div class="section-eyebrow">Stock limitado</div>
-          <h2 class="section-title" style="font-size:clamp(1.8rem,3.5vw,2.6rem);margin-bottom:18px">PRODUCIMOS<br/>POCO. Y BIEN.</h2>
-          <p style="color:var(--fg-soft);margin:0 0 14px">Tueste 72h antes del envío. Lotes chicos. Cero compromisos en calidad.</p>
-          <p style="color:var(--fg-soft);margin:0"><strong>Cuando se acaba, se acaba.</strong> No hay restock hasta que la siguiente partida esté lista.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section" id="faq">
-    <div class="container">
-      <div class="section-header" style="text-align:center">
-        <div class="section-eyebrow">Preguntas frecuentes</div>
-        <h2 class="section-title">PREGUNTAS<br/>FRECUENTES</h2>
-      </div>
-
-      <div class="faq">
-        <div class="faq-item">
-          <div class="faq-question">
-            <span class="faq-num">01</span>
-            <span class="faq-text">¿CÓMO USO EL CÓDIGO TENGOCOSASQUEHACER?</span>
-            <span class="faq-toggle">+</span>
-          </div>
-          <div class="faq-answer"><div class="faq-answer-inner">Tocá el botón de compra arriba y entrás directo al producto. En el carrito, antes de pagar, vas a ver un campo de "código de descuento". Pegás <strong>TENGOCOSASQUEHACER</strong> y te aplica 10% OFF automático.</div></div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <span class="faq-num">02</span>
-            <span class="faq-text">¿CUÁNTA CAFEÍNA TIENE?</span>
-            <span class="faq-toggle">+</span>
-          </div>
-          <div class="faq-answer"><div class="faq-answer-inner">Aproximadamente 300mg por taza preparada. 3x más que un café de filtro común, similar a un espresso triple. Si sos sensible a la cafeína, empezá con media dosis.</div></div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <span class="faq-num">03</span>
-            <span class="faq-text">¿ES MUY AMARGO O FUERTE DE SABOR?</span>
-            <span class="faq-toggle">+</span>
-          </div>
-          <div class="faq-answer"><div class="faq-answer-inner">No. El método de tostado que usamos maximiza la cafeína sin romper el sabor. La mayoría de los clientes nos dicen que es más rico que el café que tomaban antes. Si igual te resulta intenso, los sabores del sample pack lo suavizan mucho.</div></div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <span class="faq-num">04</span>
-            <span class="faq-text">¿CÓMO LO PREPARO?</span>
-            <span class="faq-toggle">+</span>
-          </div>
-          <div class="faq-answer"><div class="faq-answer-inner">Igual que cualquier café. Funciona con filtro, prensa francesa, cafetera italiana o espresso. En la caja te incluimos un manual con las proporciones recomendadas. Si no tenés cafetera, los filtros de tela del chino sirven perfecto.</div></div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <span class="faq-num">05</span>
-            <span class="faq-text">¿CUÁNTO TARDA EL ENVÍO?</span>
-            <span class="faq-toggle">+</span>
-          </div>
-          <div class="faq-answer"><div class="faq-answer-inner">Despachamos en menos de 24hs hábiles. CABA y GBA llegan en el día. Interior, 2 a 3 días hábiles. Envíos a todo el país.</div></div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <span class="faq-num">06</span>
-            <span class="faq-text">¿Y SI NO ME GUSTA?</span>
-            <span class="faq-toggle">+</span>
-          </div>
-          <div class="faq-answer"><div class="faq-answer-inner">Garantía de 7 días. Si en una semana no notás más energía, menos hambre y mejor foco, te devolvemos el 100% del dinero. Sin preguntas, sin vueltas.</div></div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
-  <section class="final-cta">
-    <div class="final-cta-eyebrow">El último empujón</div>
-    <h2 class="final-cta-title">HACELO DE UNA<br/>P*TA VEZ</h2>
-    <p class="final-cta-text">Estás acá porque algo de lo que decimos te resonó. Porque ya entendiste que no es un café, es una herramienta. Y la querés probar.</p>
-    <p class="final-cta-emph">El que duda, no hace. <em>Y vos sos de los que hacen.</em></p>
-    <div class="cta-row" style="justify-content:center">
-      <a href="https://theshockcoffee.com/productos/shock-sample-pack-450g/" class="cta" data-cta="final">
-        <span>QUIERO MI SHOCK CON 10% OFF</span>
-        <span class="cta-arrow">→</span>
-      </a>
-    </div>
-    <div style="margin-top:20px;font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-mute)">
-      Código en checkout: <strong style="color:var(--accent)">TENGOCOSASQUEHACER</strong>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <img class="footer-logo" src="https://acdn-us.mitiendanube.com/stores/003/104/793/themes/common/logo-1702573383-1683748864-96f5d266512f581b76e3211392a287351683748864-640-0.png" alt="SHOCK COFFEE" />
-    <p class="footer-text">Buenos Aires · Argentina</p>
-    <p class="footer-text" style="color:var(--fg-mute)">Hecho con cafeína y obsesión por los detalles.</p>
-    <div class="footer-meta">
-      <a href="https://theshockcoffee.com">Tienda</a> ·
-      <a href="https://suscripcion.theshockcoffee.com">Suscripciones</a> ·
-      <a href="mailto:lucas@theshockcoffee.com">lucas@theshockcoffee.com</a>
-    </div>
-  </footer>
-
+<!-- OFFER BAR -->
+<div class="offer-bar">
+  <span class="hide-mobile">⚡</span> 10% OFF con código <strong>TENGOCOSASQUEHACER</strong> <span class="sep">·</span> Garantía 7 días <span class="hide-mobile sep">·</span> <span class="hide-mobile">Envío 24hs</span>
 </div>
 
-<!-- STICKY CTA -->
-<aside class="sticky-cta" id="stickyCta" aria-hidden="true">
-  <div class="sticky-cta-copy">
-    <div class="sticky-cta-title">10% OFF · TENGOCOSASQUEHACER</div>
-    <div class="sticky-cta-price">$34.200 <span style="text-decoration:line-through;color:var(--fg-mute);font-size:.85rem;font-weight:400">$38.000</span></div>
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">
+      <img src="https://acdn-us.mitiendanube.com/stores/003/104/793/themes/common/logo-1702573383-1683748864-96f5d266512f581b76e3211392a287351683748864-640-0.png" alt="Shock Coffee" />
+    </a>
+    <div class="nav-links">
+      <a href="#caminos">Caminos</a>
+      <a href="#ciencia">Ciencia</a>
+      <a href="#testimonios">Reseñas</a>
+      <a href="#oferta">Oferta</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="#oferta" class="btn btn-accent btn-sm" data-cta="nav">Probarlo →</a>
   </div>
-  <a class="cta" href="#oferta" data-cta="sticky"><span>VER →</span></a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-rating">
+          <span class="stars">★★★★★</span>
+          <span class="rating-num">4.8</span>
+          <span class="sep">·</span>
+          <span>847 reseñas verificadas</span>
+        </div>
+
+        <h1>Para los que quieren <em>rendir más.</em></h1>
+
+        <p class="hero-sub">Si tu objetivo es <strong>mejorar tu salud, tu mente o tu cuerpo</strong> — Shock Coffee tiene 300mg de cafeína natural por taza y certificación de la UBA.</p>
+
+        <div class="hero-cta-block">
+          <a href="#oferta" class="btn btn-accent btn-lg" data-cta="hero-primary">
+            <span>Probar el Sample Pack — 10% OFF</span>
+            <span class="btn-arrow">→</span>
+          </a>
+          <div class="hero-meta">
+            <span class="hero-meta-item"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7.5L6 10L11 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Garantía 7 días</span>
+            <span class="hero-meta-item"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7.5L6 10L11 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 3 cuotas sin interés</span>
+            <span class="hero-meta-item"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7.5L6 10L11 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Despacho 24hs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <span class="hero-image-tag">Sample pack 450g</span>
+        <img src="https://acdn-us.mitiendanube.com/stores/003/104/793/products/pack-pack-b089e4837c478e39dc17716397709523-1024-1024.webp" alt="SHOCK Coffee Sample Pack 450g" fetchpriority="high" />
+        <div class="hero-image-stamp"><div><span class="big">10%</span>OFF<br/>HOY</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-strip-inner">
+    <span>+22.000 packs vendidos</span>
+    <span>Certificado UBA</span>
+    <span>Granos AA</span>
+    <span>Tostado 72h pre-envío</span>
+    <span>Top 1% Argentina</span>
+  </div>
+</div>
+
+<!-- TRANSFORMATION INTRO -->
+<section class="section">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-image">
+        <img src="https://acdn-us.mitiendanube.com/stores/003/104/793/products/2-shock-coffee-d8fe1fed83f2587f6917716407761960-1024-1024.webp" alt="Shock Coffee — combo" loading="lazy" style="background:var(--bg-3);padding:30px;object-fit:contain" />
+      </div>
+      <div class="intro-copy">
+        <div class="eyebrow muted">Por qué SHOCK</div>
+        <h2>Hay tres caminos para mejorar.<br/>Los tres necesitan <em>lo mismo.</em></h2>
+        <p>Hay quienes hacen <strong>ayuno</strong> porque quieren mejorar su salud. Quienes <strong>laburan duro</strong> porque quieren ser mejores en lo que hacen. Quienes <strong>entrenan</strong> porque quieren mejorar su cuerpo.</p>
+        <p>Caminos distintos, mismo destino: <strong>rendir más</strong>. Y todos necesitan lo mismo — energía limpia, sostenida y sin bajón.</p>
+        <p>Eso es Shock Coffee.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THREE PATHS -->
+<section class="section section-cream" id="caminos">
+  <div class="container">
+    <div class="tc">
+      <div class="eyebrow">Tres caminos</div>
+      <h2 style="max-width:760px;margin:0 auto 18px">Elegí tu camino.<br/>El combustible es el mismo.</h2>
+    </div>
+
+    <div class="paths">
+
+      <article class="path-card">
+        <div class="path-card-img"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_z12w2nz12w2nz12w.png-Cvr1pMkDst7xKyy5KhDigYR5wnG0Fi.jpeg" alt="Mejorar salud — ayuno" loading="lazy" /></div>
+        <div class="path-card-tag">01 · Salud</div>
+        <h3>Querés mejorar tu <em>salud.</em></h3>
+        <p class="path-card-desc">Ayuno intermitente, comer mejor, perder grasa. El problema es bancarse las mañanas sin caer en lo de siempre.</p>
+        <ul>
+          <li>Suprime grelina (la hormona del hambre)</li>
+          <li>Acelera la quema de grasa como combustible</li>
+          <li>0 calorías, 0 azúcar — no rompe el ayuno</li>
+        </ul>
+      </article>
+
+      <article class="path-card">
+        <div class="path-card-img"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pack%20futuro-MpKMiQeADBN9sG3fFkQIJMVaCNZSUG.png" alt="Mejorar mente — productividad" loading="lazy" /></div>
+        <div class="path-card-tag">02 · Mente</div>
+        <h3>Querés mejorar tu <em>mente.</em></h3>
+        <p class="path-card-desc">Sos de los que quieren producir, crear, decidir mejor. Pero a las 11 ya estás peleando contra la niebla mental.</p>
+        <ul>
+          <li>Foco sostenido 6-8 horas, no 2</li>
+          <li>Más cafeína = más dopamina = más claridad</li>
+          <li>Sin bajón post-almuerzo. Sin taquicardia.</li>
+        </ul>
+      </article>
+
+      <article class="path-card">
+        <div class="path-card-img"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Design%202048x2048.png-44yLjtCMby3dBdgWCvZJtqXkrdX52J.jpeg" alt="Mejorar cuerpo — entreno" loading="lazy" /></div>
+        <div class="path-card-tag">03 · Cuerpo</div>
+        <h3>Querés mejorar tu <em>cuerpo.</em></h3>
+        <p class="path-card-desc">Entrenás porque querés cambiarlo. Y necesitás un pre-entreno que no te llene de químicos raros para empujar más.</p>
+        <ul>
+          <li>Pre-workout natural: tomá 30 min antes</li>
+          <li>Más fuerza, más reps, mejor rendimiento</li>
+          <li>Sin azúcar, sin estimulantes artificiales</li>
+        </ul>
+      </article>
+
+    </div>
+
+    <p class="paths-punchline">Tu camino puede ser uno o los tres.<br/><em>El combustible es el mismo.</em></p>
+  </div>
+</section>
+
+<!-- SCIENCE / WHY IT WORKS -->
+<section class="section section-dark" id="ciencia">
+  <div class="container">
+    <div class="science-grid">
+      <div>
+        <div class="eyebrow">La fórmula</div>
+        <h2>3x más cafeína natural.<br/>0% química rara.</h2>
+        <p style="font-size:1.05rem;max-width:540px;margin-bottom:8px">Lo logramos con <strong>granos Grado AA</strong> y un método de tostado lento a baja temperatura que desarrollamos para <strong>maximizar la cafeína sin destruir el sabor</strong>.</p>
+        <p style="font-size:1.05rem;max-width:540px">Sin extractos, sin agregados sintéticos. <strong>Solo café — pero el que necesitás cuando no podés fallar el día.</strong></p>
+
+        <div class="science-stat-block">
+          <div class="science-stat">
+            <div class="science-stat-label">Cafeína por taza</div>
+            <div class="science-stat-value">300mg</div>
+            <div class="science-stat-vs">vs. <s>100mg</s> café común</div>
+          </div>
+          <div class="science-stat">
+            <div class="science-stat-label">Duración del efecto</div>
+            <div class="science-stat-value">6-8h</div>
+            <div class="science-stat-vs">vs. <s>2h</s> café común</div>
+          </div>
+          <div class="science-stat">
+            <div class="science-stat-label">Acidez (pH)</div>
+            <div class="science-stat-value">5.0</div>
+            <div class="science-stat-vs">baja · suave para el estómago</div>
+          </div>
+          <div class="science-stat">
+            <div class="science-stat-label">Crash post-pico</div>
+            <div class="science-stat-value">0</div>
+            <div class="science-stat-vs">energía pareja, sin caída</div>
+          </div>
+        </div>
+
+        <div class="science-mechanisms">
+          <div class="mechanism">
+            <div class="mechanism-num">1</div>
+            <div><h4>Suprime el apetito</h4><p>Una dosis alta de cafeína <strong>reduce la grelina</strong>, la hormona que dispara el hambre. Útil para el ayuno y para no descarrilar la dieta.</p></div>
+          </div>
+          <div class="mechanism">
+            <div class="mechanism-num">2</div>
+            <div><h4>Acelera el metabolismo</h4><p>Tu cuerpo <strong>activa la quema de grasa</strong> como fuente de energía. El efecto que buscás cuando ayunás o entrenás en ayunas.</p></div>
+          </div>
+          <div class="mechanism">
+            <div class="mechanism-num">3</div>
+            <div><h4>Mejora foco y ánimo</h4><p>Activa <strong>dopamina</strong> sin causarte ansiedad ni acidez. Concentración real, no la jitterness del energy drink.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="science-image">
+        <img src="https://acdn-us.mitiendanube.com/stores/003/104/793/products/clasico-b1d318eaf02fc3b26217716408140813-1024-1024.webp" alt="Shock Coffee 250g" loading="lazy" style="object-fit:contain;padding:40px;background:var(--bg-dark)" />
+      </div>
+    </div>
+
+    <div class="uba-card" style="background:var(--bg-2);color:var(--fg)">
+      <div class="uba-icon">UBA</div>
+      <div>
+        <h3 style="color:var(--fg)">Verificado por la Universidad de Buenos Aires</h3>
+        <p>El único café del país analizado por la <strong>Facultad de Ciencias Exactas de la UBA</strong> en 2024. Cafeína medida en laboratorio. No te lo pedimos que nos creas — verificalo vos.</p>
+      </div>
+      <a href="https://drive.google.com/file/d/1yugzNrY8MLaCxgC1BP04J1jD93WH0gDE/view" target="_blank" rel="noopener" class="uba-cta">Ver el análisis →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- PRODUCT GALLERY -->
+<section class="section">
+  <div class="container">
+    <div class="tc" style="margin-bottom:14px">
+      <div class="eyebrow muted">El producto</div>
+      <h2>Empezá por el clásico.<br/>O probá los <em>5 sabores.</em></h2>
+      <p class="lead" style="max-width:600px;margin:18px auto 0">El Sample Pack incluye el clásico de 250g + 4 sabores de 50g. La forma más eficiente de probar todo y elegir tu favorito.</p>
+    </div>
+
+    <div class="product-gallery">
+      <div class="product-tile">
+        <img src="https://acdn-us.mitiendanube.com/stores/003/104/793/products/clasico-b1d318eaf02fc3b26217716408140813-1024-1024.webp" alt="Shock clásico" loading="lazy" />
+        <div class="product-tile-name">Clásico</div>
+      </div>
+      <div class="product-tile">
+        <img src="https://acdn-us.mitiendanube.com/stores/003/104/793/products/shock-butter-a6adff1ea2ea4278df17716398210601-1024-1024.webp" alt="Shock Butter Toffee" loading="lazy" />
+        <div class="product-tile-name">Butter Toffee</div>
+      </div>
+      <div class="product-tile">
+        <img src="https://acdn-us.mitiendanube.com/stores/003/104/793/products/shock-chocolate-3f861ec7717f4cb34917716401234693-1024-1024.webp" alt="Shock Chocolate" loading="lazy" />
+        <div class="product-tile-name">Chocolate</div>
+      </div>
+      <div class="product-tile">
+        <img src="https://acdn-us.mitiendanube.com/stores/003/104/793/products/shock-vainilla-969824f970daffe9dd17716401450715-1024-1024.webp" alt="Shock Vainilla" loading="lazy" />
+        <div class="product-tile-name">Vainilla</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DAY WITH SHOCK -->
+<section class="section section-cream">
+  <div class="container">
+    <div class="tc">
+      <div class="eyebrow">El efecto en tu día</div>
+      <h2>Un día con SHOCK.<br/>Da igual qué camino elijas.</h2>
+    </div>
+
+    <div class="day-rows">
+
+      <div class="day-row">
+        <div class="day-time">07:00 AM</div>
+        <div>
+          <h4>El hambre se va en 20 minutos</h4>
+          <p>Una taza de Shock negro. <strong>Llegás al mediodía sin pensar en comida, sin niebla mental.</strong></p>
+        </div>
+        <span class="day-tag salud">Camino salud</span>
+      </div>
+
+      <div class="day-row">
+        <div class="day-time">09:00 AM</div>
+        <div>
+          <h4>Tu mejor ventana de foco</h4>
+          <p>Mientras los otros se sirven el segundo café, vos estás en el mejor momento del día. <strong>Foco intacto hasta el almuerzo.</strong></p>
+        </div>
+        <span class="day-tag mente">Camino mente</span>
+      </div>
+
+      <div class="day-row">
+        <div class="day-time">06:00 PM</div>
+        <div>
+          <h4>Una taza 30 minutos antes del entreno</h4>
+          <p><strong>Más fuerza, más reps, mejor rendimiento.</strong> Pre-workout sin azúcar ni estimulantes raros.</p>
+        </div>
+        <span class="day-tag cuerpo">Camino cuerpo</span>
+      </div>
+
+      <div class="day-row">
+        <div class="day-time">14:00</div>
+        <div>
+          <h4>16hs de ayuno cumplidas. Sin sufrir.</h4>
+          <p>Rompés el ayuno cuando vos querés, no cuando el hambre te obliga. <strong>Sin ansiedad, sin contar los minutos.</strong></p>
+        </div>
+        <span class="day-tag salud">Camino salud</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="testimonios">
+  <div class="container">
+    <div class="tc">
+      <div class="eyebrow">Reseñas reales</div>
+      <h2>Lo que dicen los que <em>ya rinden más.</em></h2>
+      <p class="lead" style="max-width:560px;margin:18px auto 0">847 reseñas verificadas. 4.8 de 5. Estas son algunas.</p>
+    </div>
+
+    <div class="tests-grid">
+
+      <article class="test">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">Llevo 4 meses haciendo 16:8 y Shock es lo único que realmente me corta el hambre hasta el mediodía. Probé yerba, té matcha, cafés caros, agua con limón. Nada se compara. <strong>Lo único que me sirvió.</strong></p>
+        <div class="test-meta">
+          <div class="test-avatar">D</div>
+          <div>
+            <div class="test-name">Diego F.</div>
+            <div class="test-where">Buenos Aires · Sample Pack 450g</div>
+            <div class="test-verified">Compra verificada · hace 3 semanas</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="test test-wa">
+        <div class="test-wa-header">
+          <div class="test-wa-avatar">M</div>
+          <div>
+            <div class="test-wa-name">Martín R.</div>
+            <div class="test-wa-status">en línea</div>
+          </div>
+        </div>
+        <div class="test-wa-body">
+          <div class="test-wa-bubble">Lucas che, no exagero<div class="test-wa-time">8:42</div></div>
+          <div class="test-wa-bubble">Probé el shock antes del AMRAP de 20min de hoy<div class="test-wa-time">8:42</div></div>
+          <div class="test-wa-bubble">y la diferencia fue tan grande que pensé que estaba mal contando las reps 😅<div class="test-wa-time">8:43</div></div>
+          <div class="test-wa-bubble">Por lejos el mejor pre-workout que probé. Y soy del que prueba todo<div class="test-wa-time">8:43</div></div>
+        </div>
+      </article>
+
+      <article class="test test-ig">
+        <div class="test-ig-header">
+          <div class="test-ig-avatar"><div>L</div></div>
+          <div>
+            <div class="test-ig-handle">lu.dispieri</div>
+          </div>
+        </div>
+        <div class="test-ig-body">
+          <div class="test-ig-actions">
+            <span>♡</span><span>💬</span><span>↗</span>
+          </div>
+          <p class="test-ig-quote"><span class="test-ig-handle-quote">lu.dispieri</span>la pregunta del millón: cómo carajo hacen los UX que <strong>laburan 8h frente a 3 monitores</strong> y siguen produciendo a las 6pm? respuesta: shock coffee ☕️ literal cambió mi rutina de trabajo. y eso que probé absolutamente todo.</p>
+          <div class="test-ig-time">Hace 5 días</div>
+        </div>
+      </article>
+
+      <article class="test">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote"><strong>Compro hace casi 2 años, todos los meses.</strong> Yo soy abogado, paso muchas horas leyendo expedientes y necesito estar concentrado. Probé pastillas, probé pre-workouts, probé energy drinks. Esto es lo único que me da foco sin que me ponga ansioso. Y encima sabe a café, no a químico.</p>
+        <div class="test-meta">
+          <div class="test-avatar">T</div>
+          <div>
+            <div class="test-name">Tomás V.</div>
+            <div class="test-where">Rosario · Suscriptor anual</div>
+            <div class="test-verified">Compra verificada · hace 1 mes</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="test">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">no soy de los que escriben reseñas pero acá tengo que. <strong>llevo 6 meses entrenando en ayunas con shock</strong> y bajé 8kg sin pasar hambre. el desayuno se me corre solo a las 13hs y rindo en el gym como si hubiera comido. la mejor compra del año fácil.</p>
+        <div class="test-meta">
+          <div class="test-avatar">C</div>
+          <div>
+            <div class="test-name">Carolina S.</div>
+            <div class="test-where">Palermo · Pack mensual</div>
+            <div class="test-verified">Compra verificada · hace 2 semanas</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="test">
+        <div class="test-stars">★★★★<span style="color:var(--line-2)">★</span></div>
+        <p class="test-quote">Bueno, lo voy a decir: <strong>al principio me pareció caro</strong>. Pero llevo el segundo pack y ya entendí por qué. Te dura, no es café cualquiera. Y el efecto es real, no es placebo. Le pongo 4 estrellas solo por el precio, pero el producto en sí es 5.</p>
+        <div class="test-meta">
+          <div class="test-avatar">F</div>
+          <div>
+            <div class="test-name">Federico A.</div>
+            <div class="test-where">Córdoba · Clásico 250g</div>
+            <div class="test-verified">Compra verificada · hace 4 días</div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section-tight section-dark">
+  <div class="container">
+    <div class="stats-row" style="border-top:0;border-bottom:0;padding:0">
+      <div>
+        <div class="stat-num" data-count="22000">+22.000</div>
+        <div class="stat-label">Packs vendidos</div>
+      </div>
+      <div>
+        <div class="stat-num">4.8 / 5</div>
+        <div class="stat-label">847 reseñas</div>
+      </div>
+      <div>
+        <div class="stat-num">94%</div>
+        <div class="stat-label">Vuelven a comprar</div>
+      </div>
+      <div>
+        <div class="stat-num">Top 1%</div>
+        <div class="stat-label">de Argentina</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section class="section offer-section" id="oferta">
+  <div class="container">
+    <div class="offer-grid">
+
+      <div class="offer-product">
+        <div class="offer-product-stamp"><div><span class="big">10%</span><span class="sm">OFF</span></div></div>
+        <img src="https://acdn-us.mitiendanube.com/stores/003/104/793/products/pack-pack-b089e4837c478e39dc17716397709523-1024-1024.webp" alt="Shock Sample Pack 450g" loading="lazy" />
+      </div>
+
+      <div class="offer-copy">
+        <div class="eyebrow">Empezá hoy</div>
+        <h2>Sample Pack 450g.<br/>Probá <em>todo.</em> Elegí tu favorito.</h2>
+        <p class="lead">El clásico de 250g + 4 sabores de 50g (Chocolate, Vainilla, Butter Toffee, Coco). La forma más inteligente de empezar.</p>
+
+        <div class="price-stack">
+          <div class="price-row">
+            <span class="label">Shock clásico 250g</span>
+            <span class="value">$28.000</span>
+          </div>
+          <div class="price-row">
+            <span class="label">4 sabores × 50g</span>
+            <span class="value">$20.000</span>
+          </div>
+          <div class="price-row">
+            <span class="label">Manual de consumo</span>
+            <span class="value">Incluido</span>
+          </div>
+          <div class="price-row">
+            <span class="label">Cuchara dosificadora</span>
+            <span class="value">Incluida</span>
+          </div>
+          <div class="price-row total">
+            <span class="label">Total con 10% OFF</span>
+            <span class="value"><span class="price-strike">$38.000</span>$34.200</span>
+          </div>
+        </div>
+
+        <div class="coupon-pill">
+          <div class="coupon-pill-icon">🎟️</div>
+          <div class="coupon-pill-text">Aplicá <strong id="coupon-code">TENGOCOSASQUEHACER</strong> en el checkout</div>
+          <button type="button" class="coupon-copy-btn" id="coupon-copy"><span id="copy-text">Copiar</span></button>
+        </div>
+
+        <a href="https://theshockcoffee.com/productos/shock-sample-pack-450g/" class="btn btn-accent btn-lg btn-block" data-cta="offer-primary" target="_blank" rel="noopener">
+          <span>Comprar con 10% OFF</span>
+          <span class="btn-arrow">→</span>
+        </a>
+
+        <div class="offer-extra">
+          <span class="offer-extra-item"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7.5L6 10L11 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Garantía 7 días</span>
+          <span class="offer-extra-item"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7.5L6 10L11 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 3 cuotas sin interés</span>
+          <span class="offer-extra-item"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7.5L6 10L11 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Despacho 24hs hábiles</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="section-tight">
+  <div class="container">
+    <div class="guarantee-card">
+      <div class="guarantee-icon">🛡</div>
+      <div>
+        <div class="eyebrow muted" style="color:var(--success)">Garantía de 7 días</div>
+        <h3>Probalo. Si no rendís más, te devolvemos el 100%.</h3>
+        <p>Si en una semana no notás más energía, menos hambre o mejor foco — te devolvemos cada peso. Sin preguntas, sin vueltas, sin formularios. <strong>El riesgo es nuestro.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-cream" id="faq">
+  <div class="container">
+    <div class="tc">
+      <div class="eyebrow">Preguntas frecuentes</div>
+      <h2>Lo que <em>todos</em> preguntan</h2>
+    </div>
+
+    <div class="faq">
+
+      <details class="faq-item">
+        <summary>¿Cómo aplico el código TENGOCOSASQUEHACER?<span class="faq-toggle">+</span></summary>
+        <div class="faq-body">Tocás cualquier botón de compra de la página y vas directo al producto. En el carrito, antes de pagar, ves un campo de "código de descuento". Pegás <code>TENGOCOSASQUEHACER</code> y se aplica el 10% OFF automático.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿Cuánta cafeína tiene exactamente?<span class="faq-toggle">+</span></summary>
+        <div class="faq-body">300mg por taza preparada. <strong>3x más que un café de filtro común</strong>, similar a un espresso triple. Si sos sensible a la cafeína, recomendamos empezar con media dosis y subir progresivamente.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿Tiene un sabor muy fuerte o amargo?<span class="faq-toggle">+</span></summary>
+        <div class="faq-body">No. Tostado lento a baja temperatura, granos AA. <strong>pH 5.0 (baja acidez), suave para el estómago.</strong> Si igual te resulta intenso, los 4 sabores del Sample Pack (chocolate, vainilla, butter toffee, coco) lo suavizan mucho.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿Cómo lo preparo? ¿Necesito cafetera?<span class="faq-toggle">+</span></summary>
+        <div class="faq-body">Funciona con <strong>cualquier método</strong>: filtro, prensa francesa, cafetera italiana, espresso. En la caja te incluimos un manual con las proporciones recomendadas. Si no tenés cafetera, los filtros de tela del chino sirven perfecto y son baratísimos.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿Cuánto tarda el envío?<span class="faq-toggle">+</span></summary>
+        <div class="faq-body">Despachamos en menos de 24hs hábiles. <strong>CABA y GBA llegan en el día.</strong> Interior, 2 a 3 días hábiles vía Andreani / Correo Argentino. Envíos a todo el país.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿Y si no me gusta?<span class="faq-toggle">+</span></summary>
+        <div class="faq-body">Garantía de 7 días. Si en una semana no notás más energía, menos hambre o mejor foco — <strong>te devolvemos el 100% del dinero</strong>. Sin preguntas, sin formularios. El riesgo es nuestro.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿Lo certifica realmente la UBA?<span class="faq-toggle">+</span></summary>
+        <div class="faq-body">Sí. La <strong>Facultad de Ciencias Exactas de la UBA</strong> analizó el contenido de cafeína en laboratorio en 2024. Es el único café del país con esa validación. <a href="https://drive.google.com/file/d/1yugzNrY8MLaCxgC1BP04J1jD93WH0gDE/view" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline">Mirá el análisis completo →</a></div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container-narrow">
+    <div class="eyebrow" style="color:var(--highlight)">Última parada</div>
+    <h2>Querés rendir más.<br/>Esto te ayuda. <em>Punto.</em></h2>
+    <p class="lead-emph">El que duda no rinde. El que prueba, descubre.</p>
+    <div class="btn-row" style="justify-content:center">
+      <a href="https://theshockcoffee.com/productos/shock-sample-pack-450g/" class="btn btn-accent btn-lg" data-cta="final" target="_blank" rel="noopener">
+        <span>Comprar con 10% OFF</span>
+        <span class="btn-arrow">→</span>
+      </a>
+    </div>
+    <div class="code-tag">Código en checkout: <strong>TENGOCOSASQUEHACER</strong></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <img class="footer-logo" src="https://acdn-us.mitiendanube.com/stores/003/104/793/themes/common/logo-1702573383-1683748864-96f5d266512f581b76e3211392a287351683748864-640-0.png" alt="Shock Coffee" />
+  <p>Buenos Aires · Argentina</p>
+  <div class="footer-links">
+    <a href="https://theshockcoffee.com">Tienda</a>
+    <a href="https://suscripcion.theshockcoffee.com">Suscripciones</a>
+    <a href="https://wa.me/5491167676747" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="mailto:lucas@theshockcoffee.com">Contacto</a>
+  </div>
+  <div class="footer-meta">
+    Hecho con cafeína y obsesión por los detalles · &copy; <span id="year"></span> Shock Coffee
+  </div>
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<aside class="sticky-bottom" id="stickyCta" aria-hidden="true">
+  <div class="sticky-bottom-text">
+    <div class="sticky-bottom-title">Sample Pack · 10% OFF</div>
+    <div class="sticky-bottom-price">$34.200 <span style="color:rgba(247,242,232,0.5);text-decoration:line-through;font-size:.85rem;font-weight:400">$38.000</span></div>
+  </div>
+  <a class="btn" href="#oferta" data-cta="sticky">Comprar →</a>
 </aside>
 
 <script>
-// LIVE CLOCK
-function updateClock(){
-  const d = new Date();
-  const t = d.toTimeString().slice(0,8);
-  const el = document.getElementById('ts');
-  if(el) el.textContent = t;
-}
-setInterval(updateClock,1000); updateClock();
+// YEAR
+document.getElementById('year').textContent = new Date().getFullYear();
 
-// LIVE STOCK COUNTER (decay slowly)
+// COPY COUPON
 (function(){
-  const el = document.getElementById('stock-count');
-  const cup = document.getElementById('cupos-current');
-  if(!el) return;
-  let n = 163;
-  setInterval(()=>{
-    if(Math.random() > 0.85 && n > 100){
-      n--;
-      el.textContent = n;
-      if(cup) cup.textContent = n;
-    }
-  }, 8000);
-})();
-
-// PROGRESS BAR
-(function(){
-  const bar = document.getElementById('progressBar');
-  if(!bar) return;
-  const io = new IntersectionObserver(es=>{
-    es.forEach(e=>{
-      if(e.isIntersecting){bar.classList.add('is-visible');io.disconnect()}
-    });
-  },{threshold:.4});
-  io.observe(bar);
-})();
-
-// FAQ ACCORDION
-document.querySelectorAll('.faq-item').forEach(item=>{
-  item.querySelector('.faq-question').addEventListener('click',()=>{
-    item.classList.toggle('open');
-  });
-});
-
-// COUPON COPY
-(function(){
-  const btn = document.getElementById('coupon-copy-btn');
+  const btn = document.getElementById('coupon-copy');
   const code = document.getElementById('coupon-code');
   const txt = document.getElementById('copy-text');
   if(!btn) return;
-  btn.addEventListener('click', async ()=>{
+  btn.addEventListener('click', async () => {
     try{
       await navigator.clipboard.writeText(code.textContent.trim());
-      txt.textContent = '✓ COPIADO';
-      setTimeout(()=>{txt.textContent='📋 COPIAR CÓDIGO'},2000);
-      try{ if(typeof fbq==='function') fbq('track','Lead',{content_name:'coupon-copy'}); }catch(e){}
+      txt.textContent = '✓ Copiado';
+      setTimeout(()=>{txt.textContent='Copiar'},2000);
+      try{if(typeof fbq==='function') fbq('track','Lead',{content_name:'coupon-copy'});}catch(e){}
     }catch(e){
-      const r = document.createRange(); r.selectNode(code);
+      const r = document.createRange();r.selectNode(code);
       window.getSelection().removeAllRanges();
       window.getSelection().addRange(r);
       document.execCommand('copy');
       window.getSelection().removeAllRanges();
-      txt.textContent = '✓ COPIADO';
-      setTimeout(()=>{txt.textContent='📋 COPIAR CÓDIGO'},2000);
+      txt.textContent='✓ Copiado';
+      setTimeout(()=>{txt.textContent='Copiar'},2000);
     }
   });
 })();
@@ -1114,11 +1410,11 @@ document.querySelectorAll('.faq-item').forEach(item=>{
   function onScroll(){
     const doc = document.documentElement;
     const pct = (window.scrollY + window.innerHeight) / doc.scrollHeight;
-    if(pct > 0.5 && pct < 0.95){
-      cta.classList.add('is-visible');
+    if(pct > 0.35 && pct < 0.94){
+      cta.classList.add('visible');
       cta.setAttribute('aria-hidden','false');
     }else{
-      cta.classList.remove('is-visible');
+      cta.classList.remove('visible');
       cta.setAttribute('aria-hidden','true');
     }
   }
@@ -1129,10 +1425,19 @@ document.querySelectorAll('.faq-item').forEach(item=>{
 // PIXEL: track CTA clicks
 document.querySelectorAll('[data-cta]').forEach(el=>{
   el.addEventListener('click',()=>{
-    try{ if(typeof fbq==='function') fbq('track','AddToCart',{content_name:el.getAttribute('data-cta')}); }catch(e){}
+    try{if(typeof fbq==='function') fbq('track','AddToCart',{content_name:el.getAttribute('data-cta')});}catch(e){}
   });
 });
-</script>
 
+// FADE UP on scroll
+(function(){
+  const els = document.querySelectorAll('.fade-up');
+  if(!els.length || !('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}});
+  },{threshold:.15});
+  els.forEach(el=>io.observe(el));
+})();
+</script>
 </body>
 </html>
