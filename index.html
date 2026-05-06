@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>SHOCK COFFEE | Esto es para vos</title>
+<meta name="description" content="Si haces ayuno, laburas duro y entrenas fuerte... esto es para vos. SHOCK COFFEE: 300mg de cafeína, certificado UBA. 10% OFF con TENGOCOSASQUEHACER." />
+<meta name="theme-color" content="#0A0A0B" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://paravos.theshockcoffee.com/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="ESTO ES PARA VOS — SHOCK COFFEE" />
+<meta property="og:description" content="Hacés ayuno + laburás duro + entrenás fuerte. Encontramos lo que tienen en común." />
+<meta property="og:url" content="https://paravos.theshockcoffee.com/" />
+
+<link rel="icon" type="image/png" href="https://acdn-us.mitiendanube.com/stores/003/104/793/themes/common/logo-1702573383-1683748864-96f5d266512f581b76e3211392a287351683748864-640-0.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Quantico:wght@400;700&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','511513174688645');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=511513174688645&ev=PageView&noscript=1" /></noscript>
+
+<style>
+:root{
+  --bg:#0A0A0B;
+  --bg-1:#111213;
+  --bg-2:#1A1B1D;
+  --bg-3:#28292A;
+  --line:rgba(255,255,255,0.10);
+  --line-2:rgba(255,255,255,0.18);
+  --fg:#FFFFFF;
+  --fg-soft:#E2E6E9;
+  --fg-mute:#9DA3A8;
+  --accent:#F5B843;
+  --accent-soft:rgba(245,184,67,0.16);
+  --success:#5CC97B;
+  --danger:#F44444;
+
+  --display:'Quantico', 'Inter', system-ui, sans-serif;
+  --sans:'Inter', system-ui, sans-serif;
+  --mono:'JetBrains Mono', ui-monospace, monospace;
+
+  --container:1180px;
+  --pad-section: clamp(80px, 11vw, 140px);
+  --radius:14px;
+  --radius-lg:22px;
+
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);
+  color:var(--fg);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* Background grain + scanlines + vignette */
+.grain,.scanlines,.vignette{
+  position:fixed;inset:0;pointer-events:none;z-index:1;
+}
+.grain{
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  opacity:.6;mix-blend-mode:overlay;
+}
+.scanlines{
+  background:repeating-linear-gradient(0deg, rgba(255,255,255,0.012) 0 2px, transparent 2px 4px);
+  mix-blend-mode:overlay;
+}
+.vignette{
+  background:radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.6) 100%);
+}
+
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+
+.frame{position:relative;z-index:2}
+
+/* Util bar */
+.util-bar{
+  position:sticky;top:0;z-index:30;
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  align-items:center;gap:16px;
+  padding:8px 24px;
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;
+  background:rgba(10,10,11,0.85);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+  text-transform:uppercase;
+  color:var(--fg-soft);
+}
+.util-bar .left{display:flex;gap:14px;align-items:center}
+.util-bar .center{text-align:center;color:var(--fg-mute)}
+.util-bar .right{display:flex;gap:14px;justify-content:flex-end}
+.live-dot{
+  display:inline-block;width:8px;height:8px;border-radius:50%;
+  background:var(--danger);margin-right:6px;vertical-align:middle;
+  box-shadow:0 0 0 0 rgba(244,68,68,.7);animation:pulse 1.6s infinite;
+}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(244,68,68,.7)}
+  70%{box-shadow:0 0 0 8px rgba(244,68,68,0)}
+  100%{box-shadow:0 0 0 0 rgba(244,68,68,0)}
+}
+@media(max-width:720px){
+  .util-bar{grid-template-columns:1fr 1fr;font-size:.66rem}
+  .util-bar .center{display:none}
+}
+
+/* Nav */
+.nav{
+  position:sticky;top:31px;z-index:29;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:24px;padding:18px 24px;
+  background:rgba(10,10,11,0.7);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav-logo{height:36px;width:auto;filter:invert(1) brightness(2)}
+.nav-links{display:flex;gap:28px;font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+.nav-links a{color:var(--fg-soft);transition:color .15s}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{
+  font-family:var(--mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:10px 18px;border:1.5px solid var(--fg);border-radius:4px;
+  transition:all .15s;
+}
+.nav-cta:hover{background:var(--accent);border-color:var(--accent);color:#000}
+@media(max-width:900px){
+  .nav-links{display:none}
+}
+
+/* Container */
+.container{width:100%;max-width:var(--container);margin:0 auto;padding:0 24px}
+
+/* HERO */
+.hero{
+  position:relative;padding: clamp(60px, 10vh, 120px) 0 clamp(40px, 6vh, 80px);
+  border-bottom:1px solid var(--line);
+}
+.hero-eyebrow{
+  font-family:var(--mono);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:24px;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.hero-eyebrow::before{
+  content:"";display:inline-block;width:8px;height:8px;background:var(--accent);
+}
+
+.headline{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(2.6rem, 8.5vw, 7rem);
+  line-height:.95;letter-spacing:-.02em;
+  margin:0 0 28px;
+  text-transform:uppercase;
+}
+.headline-line{display:block;overflow:hidden}
+.headline-line span{display:inline-block}
+
+.shock-glitch{
+  position:relative;display:inline-block;color:var(--accent);
+}
+.shock-glitch::before,.shock-glitch::after{
+  content:attr(data-text);position:absolute;left:0;top:0;width:100%;
+  background:var(--bg);overflow:hidden;
+}
+.shock-glitch::before{
+  color:#ff3a3a;animation:glitch1 3s infinite linear alternate-reverse;
+  clip-path:inset(0 0 70% 0);transform:translate(2px,0);
+}
+.shock-glitch::after{
+  color:#3aaaff;animation:glitch2 2.7s infinite linear alternate-reverse;
+  clip-path:inset(70% 0 0 0);transform:translate(-2px,0);
+}
+@keyframes glitch1{
+  0%{clip-path:inset(0 0 70% 0)}
+  20%{clip-path:inset(40% 0 50% 0)}
+  40%{clip-path:inset(10% 0 80% 0)}
+  60%{clip-path:inset(60% 0 20% 0)}
+  100%{clip-path:inset(0 0 95% 0)}
+}
+@keyframes glitch2{
+  0%{clip-path:inset(70% 0 0 0)}
+  20%{clip-path:inset(50% 0 30% 0)}
+  40%{clip-path:inset(80% 0 5% 0)}
+  60%{clip-path:inset(30% 0 60% 0)}
+  100%{clip-path:inset(95% 0 0 0)}
+}
+
+.hero-lede{
+  font-size:clamp(1.05rem, 1vw + .85rem, 1.3rem);
+  color:var(--fg-soft);max-width:680px;margin:0 0 16px;line-height:1.5;
+}
+.hero-lede strong{color:var(--fg);font-weight:700}
+
+.hero-tags{
+  display:flex;flex-wrap:wrap;gap:8px;margin:32px 0 36px;
+}
+.hero-tag{
+  font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;
+  padding:8px 14px;border:1px solid var(--line-2);border-radius:999px;
+  color:var(--fg-soft);
+}
+.hero-tag.match{background:var(--accent);border-color:var(--accent);color:#000;font-weight:700}
+
+.cta-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.cta{
+  display:inline-flex;align-items:center;gap:14px;
+  font-family:var(--mono);font-size:.95rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  padding:20px 32px;background:var(--accent);color:#000;
+  border-radius:4px;border:0;cursor:pointer;
+  transition:transform .15s, box-shadow .2s, background .15s;
+  white-space:nowrap;
+}
+.cta:hover{transform:translateY(-2px);box-shadow:0 18px 40px -15px rgba(245,184,67,.5)}
+.cta-arrow{transition:transform .2s}
+.cta:hover .cta-arrow{transform:translateX(4px)}
+.cta-meta{
+  font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--fg-mute);
+}
+
+.scroll-hint{
+  margin-top:60px;font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--fg-mute);display:flex;gap:10px;align-items:center;
+}
+.cursor-blink{
+  display:inline-block;width:10px;height:14px;background:var(--accent);
+  animation:blink 1s infinite;
+}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+
+/* TICKER */
+.ticker-wrap{
+  overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:var(--bg-1);padding:14px 0;
+}
+.ticker{
+  display:flex;gap:48px;white-space:nowrap;
+  animation:scroll 60s linear infinite;
+  font-family:var(--mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--fg-soft);
+}
+.ticker-item{display:inline-flex;align-items:center;gap:14px}
+.ticker-item .dot{width:6px;height:6px;background:var(--accent);border-radius:50%}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* SECTIONS */
+.section{padding:var(--pad-section) 0;border-bottom:1px solid var(--line)}
+.section-eyebrow{
+  font-family:var(--mono);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--fg-mute);margin-bottom:14px;
+}
+.section-title{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(2rem, 4.5vw, 3.6rem);
+  line-height:1;letter-spacing:-.01em;
+  margin:0 0 18px;text-transform:uppercase;
+}
+.section-sub{
+  font-size:1.05rem;color:var(--fg-soft);max-width:680px;margin:0 0 0;line-height:1.55;
+}
+.section-header{margin-bottom:60px}
+
+/* VENN — three-circle visual */
+.venn-wrap{
+  position:relative;display:flex;justify-content:center;align-items:center;
+  margin: 30px auto 64px;max-width:760px;
+}
+.venn{
+  position:relative;width:100%;aspect-ratio: 1 / 0.92;
+  font-family:var(--display);text-transform:uppercase;font-weight:700;
+}
+.venn svg{position:absolute;inset:0;width:100%;height:100%}
+.venn-label{
+  position:absolute;text-align:center;font-size:clamp(.7rem,1.5vw,1rem);
+  letter-spacing:.04em;line-height:1.1;
+}
+.venn-label.top{top:6%;left:50%;transform:translateX(-50%);width:30%}
+.venn-label.left{bottom:14%;left:6%;width:30%}
+.venn-label.right{bottom:14%;right:6%;width:30%}
+.venn-label.center{
+  top:50%;left:50%;transform:translate(-50%,-25%);width:24%;
+  color:#000;font-size:clamp(.66rem,1.4vw,.92rem);
+}
+.venn-label.center strong{display:block;font-size:1.05em;color:#000}
+
+@media(max-width:600px){
+  .venn-label.top{top:3%}
+  .venn-label.left{bottom:8%}
+  .venn-label.right{bottom:8%}
+}
+
+/* PERFILES (3 cards) */
+.perfiles{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+}
+@media(max-width:900px){.perfiles{grid-template-columns:1fr}}
+.perfil{
+  background:var(--bg-1);border:1px solid var(--line);
+  padding:36px 28px 32px;border-radius:0;
+  position:relative;transition:border-color .2s, transform .2s;
+}
+.perfil:hover{border-color:var(--accent);transform:translateY(-4px)}
+.perfil-num{
+  font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--fg-mute);margin-bottom:24px;display:flex;justify-content:space-between;align-items:center;
+}
+.perfil-num span:last-child{color:var(--accent)}
+.perfil-title{
+  font-family:var(--display);font-weight:700;text-transform:uppercase;
+  font-size:1.6rem;line-height:1;letter-spacing:-.005em;margin:0 0 18px;
+}
+.perfil-desc{font-size:.98rem;color:var(--fg-soft);margin:0 0 22px}
+.perfil-bullets{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.perfil-bullets li{
+  position:relative;padding-left:22px;font-size:.94rem;color:var(--fg-soft);line-height:1.5;
+}
+.perfil-bullets li::before{
+  content:"+";position:absolute;left:0;top:0;color:var(--accent);font-weight:700;
+}
+
+/* DOSSIER (composición) */
+.dossier-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;
+}
+@media(max-width:900px){.dossier-grid{grid-template-columns:1fr}}
+
+.dossier{
+  background:var(--bg-1);border:1px solid var(--line);
+  padding:24px;font-family:var(--mono);
+}
+.dossier-header{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--fg-mute);padding-bottom:14px;border-bottom:1px solid var(--line);margin-bottom:6px;
+}
+.dossier-header .live{color:var(--accent)}
+.dossier-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 0;border-bottom:1px dashed var(--line);
+}
+.dossier-row:last-child{border-bottom:0}
+.dossier-row .label{font-size:.84rem;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-mute)}
+.dossier-row .value{font-size:1.02rem;color:var(--fg);font-weight:700}
+.dossier-row .value.alert{color:var(--accent)}
+
+.dossier-copy h3{
+  font-family:var(--display);font-weight:700;text-transform:uppercase;
+  font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.05;margin:0 0 18px;
+}
+.dossier-copy p{color:var(--fg-soft);margin:0 0 14px}
+.dossier-copy strong{color:var(--fg)}
+.dossier-copy .uba{
+  display:inline-flex;align-items:center;gap:10px;margin-top:18px;
+  padding:10px 14px;background:rgba(92,201,123,.08);border:1px solid rgba(92,201,123,.3);
+  border-radius:4px;
+  font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--success);
+}
+.dossier-copy .uba a{color:var(--success);text-decoration:underline;text-underline-offset:3px}
+
+/* MANIFESTO */
+.manifesto{
+  text-align:center;max-width:820px;margin:0 auto;
+}
+.manifesto h2{
+  font-family:var(--display);font-weight:700;text-transform:uppercase;
+  font-size:clamp(2rem,4.5vw,3.4rem);line-height:1;margin:0 0 28px;
+}
+.manifesto p{font-size:1.1rem;color:var(--fg-soft);margin:0 0 16px}
+.manifesto p strong{color:var(--fg)}
+.manifesto .signature{
+  margin-top:36px;font-family:var(--mono);font-size:.76rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--fg-mute);
+}
+
+/* OFFER */
+.offer{
+  position:relative;
+  background:linear-gradient(180deg, var(--bg-1) 0%, var(--bg) 100%);
+}
+.offer-grid{
+  display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;
+}
+@media(max-width:900px){.offer-grid{grid-template-columns:1fr}}
+
+.coupon{
+  background:#000;border:2px dashed var(--accent);padding:36px 32px;
+  font-family:var(--mono);text-align:center;
+  position:relative;
+}
+.coupon::before,.coupon::after{
+  content:"";position:absolute;width:24px;height:24px;background:var(--bg);border-radius:50%;
+}
+.coupon::before{left:-12px;top:50%;transform:translateY(-50%)}
+.coupon::after{right:-12px;top:50%;transform:translateY(-50%)}
+.coupon-label{
+  font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-mute);margin-bottom:12px;
+}
+.coupon-code{
+  font-size:clamp(1.4rem, 3vw, 2.2rem);font-weight:700;color:var(--accent);
+  letter-spacing:.04em;margin:0 0 12px;word-break:break-all;
+}
+.coupon-discount{
+  font-size:.92rem;color:var(--fg-soft);margin:0 0 18px;
+}
+.coupon-discount strong{color:var(--accent);font-size:1.1rem}
+.coupon-copy{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--fg-mute);cursor:pointer;
+  border:1px solid var(--line-2);padding:8px 14px;border-radius:4px;
+  transition:all .15s;background:transparent;font-family:inherit;
+}
+.coupon-copy:hover{border-color:var(--accent);color:var(--accent)}
+
+.offer-copy h2{
+  font-family:var(--display);font-weight:700;text-transform:uppercase;
+  font-size:clamp(2rem,4.5vw,3.2rem);line-height:1;margin:0 0 24px;
+}
+.offer-copy p{color:var(--fg-soft);margin:0 0 16px;font-size:1.05rem}
+.offer-copy strong{color:var(--fg)}
+.offer-copy .stack{
+  margin:24px 0;padding:18px 20px;
+  background:var(--bg-1);border:1px solid var(--line);border-radius:0;
+}
+.offer-copy .stack-item{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:8px 0;font-family:var(--mono);font-size:.92rem;
+}
+.offer-copy .stack-item .label{color:var(--fg-soft)}
+.offer-copy .stack-item .value{color:var(--fg);font-weight:700}
+.offer-copy .stack-item.total{
+  border-top:1px solid var(--line);padding-top:14px;margin-top:8px;
+  font-size:1.05rem;
+}
+.offer-copy .stack-item.total .label{color:var(--accent);text-transform:uppercase;letter-spacing:.06em}
+.offer-copy .stack-item.total .value{color:var(--accent);font-size:1.4rem}
+.offer-copy .stack-item .strike{text-decoration:line-through;color:var(--fg-mute);margin-right:8px}
+
+.guarantee{
+  margin-top:24px;padding:18px 20px;
+  background:rgba(92,201,123,.06);border:1px solid rgba(92,201,123,.3);
+  display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;
+}
+.guarantee-icon{
+  width:44px;height:44px;border-radius:50%;
+  background:rgba(92,201,123,.12);
+  display:grid;place-items:center;font-size:1.4rem;
+}
+.guarantee h4{margin:0 0 4px;font-size:.94rem;color:var(--success);text-transform:uppercase;letter-spacing:.08em;font-family:var(--mono)}
+.guarantee p{margin:0;font-size:.9rem;color:var(--fg-soft)}
+
+/* STOCK STATUS */
+.cupos-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;
+}
+@media(max-width:900px){.cupos-grid{grid-template-columns:1fr}}
+.cupos-meter{
+  background:var(--bg-1);border:1px solid var(--line);padding:32px;
+}
+.cupos-meter-header{
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--fg-mute);margin-bottom:18px;
+}
+.cupos-meter-header span:last-child{color:var(--accent)}
+.cupos-meter-numbers{
+  display:flex;align-items:baseline;gap:12px;margin-bottom:24px;
+}
+.cupos-current{
+  font-family:var(--display);font-weight:700;font-size:clamp(3.5rem,8vw,5.5rem);
+  line-height:1;color:var(--accent);letter-spacing:-.02em;
+}
+.cupos-total{
+  font-family:var(--mono);font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--fg-mute);
+}
+.progress-bar{
+  height:8px;background:rgba(255,255,255,.06);border-radius:0;overflow:hidden;
+  margin-bottom:18px;
+}
+.progress-bar-fill{
+  height:100%;width:0;background:linear-gradient(90deg, var(--accent) 0%, #ffd87a 100%);
+  transition:width 1.6s cubic-bezier(.2,.7,.2,1) .3s;
+}
+.progress-bar.is-visible .progress-bar-fill{width:88%}
+.cupos-foot{
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--fg-mute);
+}
+
+/* FAQ */
+.faq{max-width:780px;margin:0 auto}
+.faq-item{
+  border-bottom:1px solid var(--line);
+}
+.faq-question{
+  display:flex;justify-content:space-between;align-items:center;gap:20px;
+  padding:24px 0;cursor:pointer;user-select:none;
+  transition:color .15s;
+}
+.faq-question:hover{color:var(--accent)}
+.faq-num{
+  font-family:var(--mono);font-size:.78rem;letter-spacing:.12em;color:var(--fg-mute);min-width:30px;
+}
+.faq-text{
+  flex:1;font-family:var(--display);font-weight:700;text-transform:uppercase;
+  font-size:1.1rem;letter-spacing:-.005em;
+}
+.faq-toggle{
+  font-family:var(--mono);font-size:1.4rem;color:var(--fg-mute);transition:transform .2s, color .2s;
+}
+.faq-item.open .faq-toggle{transform:rotate(45deg);color:var(--accent)}
+.faq-item.open .faq-question{color:var(--accent)}
+.faq-answer{
+  max-height:0;overflow:hidden;transition:max-height .3s ease;
+}
+.faq-item.open .faq-answer{max-height:400px}
+.faq-answer-inner{
+  padding:0 0 24px 40px;color:var(--fg-soft);font-size:.98rem;line-height:1.6;
+}
+
+/* FINAL CTA */
+.final-cta{
+  text-align:center;padding:var(--pad-section) 24px;
+  background:linear-gradient(180deg, var(--bg) 0%, #050506 100%);
+}
+.final-cta-eyebrow{
+  font-family:var(--mono);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:20px;
+}
+.final-cta-title{
+  font-family:var(--display);font-weight:700;text-transform:uppercase;
+  font-size:clamp(2.4rem,7vw,5.5rem);line-height:1;margin:0 0 28px;
+}
+.final-cta-text{
+  font-size:1.1rem;color:var(--fg-soft);max-width:680px;margin:0 auto 16px;
+}
+.final-cta-text strong{color:var(--fg)}
+.final-cta-emph{
+  font-size:1.15rem;color:var(--fg);font-weight:700;max-width:680px;margin:0 auto 36px;
+}
+.final-cta-emph em{color:var(--accent);font-style:normal}
+
+/* FOOTER */
+.footer{
+  text-align:center;padding:60px 24px 80px;background:#050506;
+  border-top:1px solid var(--line);
+}
+.footer-logo{height:36px;width:auto;filter:invert(1) brightness(2);margin:0 auto 18px}
+.footer-text{margin:6px 0;font-size:.92rem;color:var(--fg-mute)}
+.footer-meta{
+  margin-top:24px;padding-top:24px;border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;color:var(--fg-mute);
+}
+.footer-meta a{color:var(--fg-soft);text-decoration:underline;text-underline-offset:3px}
+
+/* Sticky mobile CTA */
+.sticky-cta{
+  position:fixed;left:12px;right:12px;bottom:12px;z-index:50;
+  background:rgba(10,10,11,0.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid var(--line-2);padding:12px;
+  display:flex;gap:12px;align-items:center;
+  transform:translateY(150%);transition:transform .3s;
+}
+.sticky-cta.is-visible{transform:translateY(0)}
+.sticky-cta-copy{flex:1;min-width:0}
+.sticky-cta-title{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-mute)}
+.sticky-cta-price{font-family:var(--display);font-weight:700;font-size:1.05rem;color:var(--fg)}
+.sticky-cta .cta{padding:12px 18px;font-size:.78rem}
+@media(min-width:900px){.sticky-cta{display:none}}
+
+/* Section divider */
+.section-divider{
+  height:1px;background:var(--line);margin:0;
+}
+
+/* Selection */
+::selection{background:var(--accent);color:#000}
+
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+<div class="scanlines"></div>
+<div class="vignette"></div>
+
+<div class="frame">
+
+  <!-- UTIL BAR -->
+  <div class="util-bar">
+    <div class="left">
+      <span><span class="live-dot"></span>EN VIVO</span>
+      <span style="opacity:.7">300mg de cafeína por taza</span>
+    </div>
+    <div class="center">Stock disponible · <span id="stock-count">163</span> packs</div>
+    <div class="right">
+      <span id="ts">14:32:11</span>
+      <span style="opacity:.7">Buenos Aires</span>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="#"><img class="nav-logo" src="https://acdn-us.mitiendanube.com/stores/003/104/793/themes/common/logo-1702573383-1683748864-96f5d266512f581b76e3211392a287351683748864-640-0.png" alt="SHOCK COFFEE" /></a>
+    <div class="nav-links">
+      <a href="#perfiles">PARA QUIÉN</a>
+      <a href="#composicion">QUÉ ES</a>
+      <a href="#oferta">OFERTA</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a class="nav-cta" href="#oferta">&gt; LO QUIERO</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-eyebrow">Sistema de combustible · Lote 04/26</div>
+      <h1 class="headline">
+        <span class="headline-line"><span>ESTO</span></span>
+        <span class="headline-line"><span>ES PARA</span></span>
+        <span class="headline-line"><span class="shock-glitch" data-text="VOS.">VOS.</span></span>
+      </h1>
+      <p class="hero-lede"><strong>Hacés ayuno. Laburás como un poseso. Entrenás cuando podés.</strong> Y todavía no encontraste algo que te aguante las tres cosas a la vez sin que te tiemble la mano.</p>
+      <p class="hero-lede" style="font-size:1rem;color:var(--fg-mute)">Encontramos lo que esos tres perfiles tienen en común. Y es esto.</p>
+
+      <div class="hero-tags">
+        <span class="hero-tag">GENTE QUE HACE AYUNO</span>
+        <span class="hero-tag">GENTE QUE LABURA DURO</span>
+        <span class="hero-tag">GENTE QUE ENTRENA FUERTE</span>
+        <span class="hero-tag match">⚡ GENTE QUE TOMA SHOCK</span>
+      </div>
+
+      <div class="cta-row">
+        <a href="#oferta" class="cta">
+          <span>QUIERO PROBARLO</span>
+          <span class="cta-arrow">→</span>
+        </a>
+        <span class="cta-meta">10% OFF CON CÓDIGO · GARANTÍA 7 DÍAS</span>
+      </div>
+
+      <div class="scroll-hint">
+        <span>Bajá para entender por qué</span>
+        <span class="cursor-blink"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker">
+      <span class="ticker-item"><span class="dot"></span>300 MG DE CAFEÍNA · 3X UN CAFÉ COMÚN</span>
+      <span class="ticker-item"><span class="dot"></span>CERTIFICADO POR LA UBA</span>
+      <span class="ticker-item"><span class="dot"></span>0 AZÚCAR · 0 CALORÍAS · 0 ACIDEZ</span>
+      <span class="ticker-item"><span class="dot"></span>72H DE TOSTADO PRE-ENVÍO</span>
+      <span class="ticker-item"><span class="dot"></span>+22.000 PACKS VENDIDOS</span>
+      <span class="ticker-item"><span class="dot"></span>ENVÍO A TODO EL PAÍS</span>
+      <span class="ticker-item"><span class="dot"></span>300 MG DE CAFEÍNA · 3X UN CAFÉ COMÚN</span>
+      <span class="ticker-item"><span class="dot"></span>CERTIFICADO POR LA UBA</span>
+      <span class="ticker-item"><span class="dot"></span>0 AZÚCAR · 0 CALORÍAS · 0 ACIDEZ</span>
+      <span class="ticker-item"><span class="dot"></span>72H DE TOSTADO PRE-ENVÍO</span>
+      <span class="ticker-item"><span class="dot"></span>+22.000 PACKS VENDIDOS</span>
+      <span class="ticker-item"><span class="dot"></span>ENVÍO A TODO EL PAÍS</span>
+    </div>
+  </div>
+
+  <!-- VENN + PERFILES -->
+  <section class="section" id="perfiles">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Diagrama operativo</div>
+        <h2 class="section-title">ENCONTRAMOS LO<br />QUE TIENEN EN COMÚN</h2>
+        <p class="section-sub">No es casualidad. Las tres cosas requieren lo mismo: <strong>energía limpia, sostenida y sin caída.</strong> Y nada del mercado te lo da.</p>
+      </div>
+
+      <!-- VENN DIAGRAM -->
+      <div class="venn-wrap">
+        <div class="venn">
+          <svg viewBox="0 0 600 540" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <filter id="vennGlow">
+                <feGaussianBlur stdDeviation="2" />
+              </filter>
+            </defs>
+            <!-- Yellow center fill (clipped intersection) -->
+            <mask id="topMask"><rect width="600" height="540" fill="black"/><circle cx="300" cy="180" r="170" fill="white"/></mask>
+            <mask id="leftMask"><rect width="600" height="540" fill="black"/><circle cx="210" cy="340" r="170" fill="white"/></mask>
+            <mask id="rightMask"><rect width="600" height="540" fill="black"/><circle cx="390" cy="340" r="170" fill="white"/></mask>
+            <g>
+              <circle cx="210" cy="340" r="170" fill="rgba(245,184,67,0.18)" mask="url(#topMask)"/>
+              <circle cx="390" cy="340" r="170" fill="rgba(245,184,67,0.18)" mask="url(#topMask)"/>
+              <circle cx="390" cy="340" r="170" fill="rgba(245,184,67,0.55)" mask="url(#leftMask)"/>
+            </g>
+            <!-- Strokes -->
+            <circle cx="300" cy="180" r="170" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.5"/>
+            <circle cx="210" cy="340" r="170" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.5"/>
+            <circle cx="390" cy="340" r="170" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.5"/>
+          </svg>
+          <div class="venn-label top">GENTE QUE<br/>HACE AYUNO</div>
+          <div class="venn-label left">GENTE CON<br/>MUCHO LABURO</div>
+          <div class="venn-label right">GENTE QUE<br/>ENTRENA FUERTE</div>
+          <div class="venn-label center">
+            <strong>GENTE QUE TOMA</strong>
+            SHOCK COFFEE
+          </div>
+        </div>
+      </div>
+
+      <div class="perfiles">
+
+        <article class="perfil">
+          <div class="perfil-num"><span>01</span><span>AYUNO</span></div>
+          <h3 class="perfil-title">Si hacés<br/>ayuno...</h3>
+          <p class="perfil-desc">El café común te da 2 horas y crash. SHOCK te corta el hambre hasta el mediodía sin que tengas que tirar de fuerza de voluntad.</p>
+          <ul class="perfil-bullets">
+            <li>Cafeína suprime grelina (la hormona del hambre).</li>
+            <li>Acelera la quema de grasa: tu cuerpo usa lo que tenés guardado.</li>
+            <li>0 calorías, 0 azúcar: no rompés el ayuno.</li>
+          </ul>
+        </article>
+
+        <article class="perfil">
+          <div class="perfil-num"><span>02</span><span>LABURO</span></div>
+          <h3 class="perfil-title">Si laburás<br/>duro...</h3>
+          <p class="perfil-desc">Los días en que no podés permitirte 4 horas de niebla mental, SHOCK te da foco parejo de la mañana hasta la tarde. Sin taquicardia.</p>
+          <ul class="perfil-bullets">
+            <li>3x más cafeína que un café de filtro común.</li>
+            <li>Energía sostenida 6-8 horas. Sin pico ni caída.</li>
+            <li>Más cafeína = más dopamina = más foco real.</li>
+          </ul>
+        </article>
+
+        <article class="perfil">
+          <div class="perfil-num"><span>03</span><span>ENTRENO</span></div>
+          <h3 class="perfil-title">Si entrenás<br/>fuerte...</h3>
+          <p class="perfil-desc">Tomá una taza 30 min antes y entrenás como si hubieses comido. Más fuerza, más reps, mejor rendimiento. Pre-workout natural.</p>
+          <ul class="perfil-bullets">
+            <li>Mejora el rendimiento aeróbico y de fuerza.</li>
+            <li>Reduce la percepción de esfuerzo: empujás más.</li>
+            <li>Sin azúcar ni estimulantes raros. Solo cafeína buena.</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPOSICION / DOSSIER -->
+  <section class="section" id="composicion">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Composición</div>
+        <h2 class="section-title">QUÉ TIENE<br/>ADENTRO</h2>
+      </div>
+
+      <div class="dossier-grid">
+        <div class="dossier-copy">
+          <h3>NO ES UN CAFÉ COMÚN<br/>ES UNA HERRAMIENTA</h3>
+          <p>SHOCK es el único café del país <strong>diseñado para hacer</strong>. Mezcla específica de granos + un método de tostado que desarrollamos nosotros para <strong>maximizar la cafeína sin romper el sabor</strong>.</p>
+          <p>Nada de "energy drinks" con química rara. Solo café. <strong>Pero el café que necesitás cuando lo único que querés es no fallar el día.</strong></p>
+          <a href="https://drive.google.com/file/d/1yugzNrY8MLaCxgC1BP04J1jD93WH0gDE/view" target="_blank" rel="noopener" class="uba">
+            ✓ ANÁLISIS UBA · Verificá los resultados
+          </a>
+        </div>
+
+        <aside class="dossier">
+          <div class="dossier-header">
+            <span>Datos del lote</span>
+            <span class="live"><span class="live-dot"></span>EN VIVO</span>
+          </div>
+          <div class="dossier-row">
+            <span class="label">Cafeína por taza</span>
+            <span class="value">300 mg</span>
+          </div>
+          <div class="dossier-row">
+            <span class="label">vs. café de filtro común</span>
+            <span class="value alert">3 x más</span>
+          </div>
+          <div class="dossier-row">
+            <span class="label">Azúcar</span>
+            <span class="value">0 g</span>
+          </div>
+          <div class="dossier-row">
+            <span class="label">Calorías</span>
+            <span class="value">0 kcal</span>
+          </div>
+          <div class="dossier-row">
+            <span class="label">Acidez</span>
+            <span class="value">Baja</span>
+          </div>
+          <div class="dossier-row">
+            <span class="label">Tostado pre-envío</span>
+            <span class="value">72 h</span>
+          </div>
+          <div class="dossier-row">
+            <span class="label">Análisis UBA</span>
+            <span class="value alert">✓ Validado</span>
+          </div>
+          <div class="dossier-row">
+            <span class="label">Packs vendidos</span>
+            <span class="value">+22.000</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANIFESTO -->
+  <section class="section">
+    <div class="container">
+      <div class="manifesto">
+        <h2>EL MUNDO ES<br/>DE LOS QUE HACEN.</h2>
+        <p>El que ayuna, el que labura, el que entrena. <strong>No estás esperando que las cosas pasen. Las hacés.</strong></p>
+        <p>Pero hacer cuesta. Y nadie habla del costo: la cabeza nublada a las 11, el bajón post-almuerzo, la energía que no alcanza para la sesión de la tarde.</p>
+        <p><strong>SHOCK es la herramienta. La parte que faltaba.</strong></p>
+        <p style="margin-top:24px;color:var(--fg-mute)">No te promete que vas a ser distinto. Te da los 8 watts extra que te faltaban para ser el que ya querías ser.</p>
+        <div class="signature">— Lucas, fundador de SHOCK COFFEE</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFER -->
+  <section class="section offer" id="oferta">
+    <div class="container">
+      <div class="offer-grid">
+        <div class="offer-copy">
+          <div class="section-eyebrow">Oferta exclusiva</div>
+          <h2>10% OFF<br/>HOY</h2>
+          <p><strong>Empezá con el Sample Pack</strong>: el clásico de 250g + 4 sabores de 50g para que pruebes todo y elijas tu favorito.</p>
+
+          <div class="stack">
+            <div class="stack-item">
+              <span class="label">Shock clásico 250g</span>
+              <span class="value">$28.000</span>
+            </div>
+            <div class="stack-item">
+              <span class="label">4 sabores x 50g</span>
+              <span class="value">$20.000</span>
+            </div>
+            <div class="stack-item">
+              <span class="label">Manual de consumo</span>
+              <span class="value">Incluido</span>
+            </div>
+            <div class="stack-item">
+              <span class="label">Cuchara dosificadora</span>
+              <span class="value">Incluida</span>
+            </div>
+            <div class="stack-item total">
+              <span class="label">CON 10% OFF</span>
+              <span class="value"><span class="strike">$38.000</span>$34.200</span>
+            </div>
+          </div>
+
+          <div class="cta-row" style="margin-top:8px">
+            <a href="https://theshockcoffee.com/productos/shock-sample-pack-450g/" class="cta" data-cta="offer-primary">
+              <span>USAR EL CÓDIGO Y COMPRAR</span>
+              <span class="cta-arrow">→</span>
+            </a>
+          </div>
+
+          <div class="guarantee">
+            <div class="guarantee-icon">🛡</div>
+            <div>
+              <h4>Garantía 7 días</h4>
+              <p>Si no notás más energía, menos hambre y mejor foco, te devolvemos el 100%. Sin preguntas.</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="coupon">
+            <div class="coupon-label">Código exclusivo</div>
+            <div class="coupon-code" id="coupon-code">TENGOCOSASQUEHACER</div>
+            <div class="coupon-discount"><strong>10% OFF</strong> aplicable al checkout</div>
+            <button class="coupon-copy" id="coupon-copy-btn" type="button">
+              <span id="copy-text">📋 COPIAR CÓDIGO</span>
+            </button>
+          </div>
+          <p style="margin-top:18px;font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-mute);text-align:center">
+            Pegá el código en el carrito al finalizar la compra
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STOCK / SCARCITY -->
+  <section class="section">
+    <div class="container">
+      <div class="cupos-grid">
+        <div class="cupos-meter">
+          <div class="cupos-meter-header">
+            <span>Stock del lote</span>
+            <span><span class="live-dot"></span>EN VIVO</span>
+          </div>
+          <div class="cupos-meter-numbers">
+            <span class="cupos-current" id="cupos-current">163</span>
+            <span class="cupos-total">PACKS<br/>DISPONIBLES</span>
+          </div>
+          <div class="progress-bar" id="progressBar">
+            <div class="progress-bar-fill"></div>
+          </div>
+          <div class="cupos-foot">88% del lote ya se vendió</div>
+        </div>
+
+        <div>
+          <div class="section-eyebrow">Stock limitado</div>
+          <h2 class="section-title" style="font-size:clamp(1.8rem,3.5vw,2.6rem);margin-bottom:18px">PRODUCIMOS<br/>POCO. Y BIEN.</h2>
+          <p style="color:var(--fg-soft);margin:0 0 14px">Tueste 72h antes del envío. Lotes chicos. Cero compromisos en calidad.</p>
+          <p style="color:var(--fg-soft);margin:0"><strong>Cuando se acaba, se acaba.</strong> No hay restock hasta que la siguiente partida esté lista.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-header" style="text-align:center">
+        <div class="section-eyebrow">Preguntas frecuentes</div>
+        <h2 class="section-title">PREGUNTAS<br/>FRECUENTES</h2>
+      </div>
+
+      <div class="faq">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-num">01</span>
+            <span class="faq-text">¿CÓMO USO EL CÓDIGO TENGOCOSASQUEHACER?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer"><div class="faq-answer-inner">Tocá el botón de compra arriba y entrás directo al producto. En el carrito, antes de pagar, vas a ver un campo de "código de descuento". Pegás <strong>TENGOCOSASQUEHACER</strong> y te aplica 10% OFF automático.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-num">02</span>
+            <span class="faq-text">¿CUÁNTA CAFEÍNA TIENE?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer"><div class="faq-answer-inner">Aproximadamente 300mg por taza preparada. 3x más que un café de filtro común, similar a un espresso triple. Si sos sensible a la cafeína, empezá con media dosis.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-num">03</span>
+            <span class="faq-text">¿ES MUY AMARGO O FUERTE DE SABOR?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer"><div class="faq-answer-inner">No. El método de tostado que usamos maximiza la cafeína sin romper el sabor. La mayoría de los clientes nos dicen que es más rico que el café que tomaban antes. Si igual te resulta intenso, los sabores del sample pack lo suavizan mucho.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-num">04</span>
+            <span class="faq-text">¿CÓMO LO PREPARO?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer"><div class="faq-answer-inner">Igual que cualquier café. Funciona con filtro, prensa francesa, cafetera italiana o espresso. En la caja te incluimos un manual con las proporciones recomendadas. Si no tenés cafetera, los filtros de tela del chino sirven perfecto.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-num">05</span>
+            <span class="faq-text">¿CUÁNTO TARDA EL ENVÍO?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer"><div class="faq-answer-inner">Despachamos en menos de 24hs hábiles. CABA y GBA llegan en el día. Interior, 2 a 3 días hábiles. Envíos a todo el país.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-num">06</span>
+            <span class="faq-text">¿Y SI NO ME GUSTA?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer"><div class="faq-answer-inner">Garantía de 7 días. Si en una semana no notás más energía, menos hambre y mejor foco, te devolvemos el 100% del dinero. Sin preguntas, sin vueltas.</div></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="final-cta-eyebrow">El último empujón</div>
+    <h2 class="final-cta-title">HACELO DE UNA<br/>P*TA VEZ</h2>
+    <p class="final-cta-text">Estás acá porque algo de lo que decimos te resonó. Porque ya entendiste que no es un café, es una herramienta. Y la querés probar.</p>
+    <p class="final-cta-emph">El que duda, no hace. <em>Y vos sos de los que hacen.</em></p>
+    <div class="cta-row" style="justify-content:center">
+      <a href="https://theshockcoffee.com/productos/shock-sample-pack-450g/" class="cta" data-cta="final">
+        <span>QUIERO MI SHOCK CON 10% OFF</span>
+        <span class="cta-arrow">→</span>
+      </a>
+    </div>
+    <div style="margin-top:20px;font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-mute)">
+      Código en checkout: <strong style="color:var(--accent)">TENGOCOSASQUEHACER</strong>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <img class="footer-logo" src="https://acdn-us.mitiendanube.com/stores/003/104/793/themes/common/logo-1702573383-1683748864-96f5d266512f581b76e3211392a287351683748864-640-0.png" alt="SHOCK COFFEE" />
+    <p class="footer-text">Buenos Aires · Argentina</p>
+    <p class="footer-text" style="color:var(--fg-mute)">Hecho con cafeína y obsesión por los detalles.</p>
+    <div class="footer-meta">
+      <a href="https://theshockcoffee.com">Tienda</a> ·
+      <a href="https://suscripcion.theshockcoffee.com">Suscripciones</a> ·
+      <a href="mailto:lucas@theshockcoffee.com">lucas@theshockcoffee.com</a>
+    </div>
+  </footer>
+
+</div>
+
+<!-- STICKY CTA -->
+<aside class="sticky-cta" id="stickyCta" aria-hidden="true">
+  <div class="sticky-cta-copy">
+    <div class="sticky-cta-title">10% OFF · TENGOCOSASQUEHACER</div>
+    <div class="sticky-cta-price">$34.200 <span style="text-decoration:line-through;color:var(--fg-mute);font-size:.85rem;font-weight:400">$38.000</span></div>
+  </div>
+  <a class="cta" href="#oferta" data-cta="sticky"><span>VER →</span></a>
+</aside>
+
+<script>
+// LIVE CLOCK
+function updateClock(){
+  const d = new Date();
+  const t = d.toTimeString().slice(0,8);
+  const el = document.getElementById('ts');
+  if(el) el.textContent = t;
+}
+setInterval(updateClock,1000); updateClock();
+
+// LIVE STOCK COUNTER (decay slowly)
+(function(){
+  const el = document.getElementById('stock-count');
+  const cup = document.getElementById('cupos-current');
+  if(!el) return;
+  let n = 163;
+  setInterval(()=>{
+    if(Math.random() > 0.85 && n > 100){
+      n--;
+      el.textContent = n;
+      if(cup) cup.textContent = n;
+    }
+  }, 8000);
+})();
+
+// PROGRESS BAR
+(function(){
+  const bar = document.getElementById('progressBar');
+  if(!bar) return;
+  const io = new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){bar.classList.add('is-visible');io.disconnect()}
+    });
+  },{threshold:.4});
+  io.observe(bar);
+})();
+
+// FAQ ACCORDION
+document.querySelectorAll('.faq-item').forEach(item=>{
+  item.querySelector('.faq-question').addEventListener('click',()=>{
+    item.classList.toggle('open');
+  });
+});
+
+// COUPON COPY
+(function(){
+  const btn = document.getElementById('coupon-copy-btn');
+  const code = document.getElementById('coupon-code');
+  const txt = document.getElementById('copy-text');
+  if(!btn) return;
+  btn.addEventListener('click', async ()=>{
+    try{
+      await navigator.clipboard.writeText(code.textContent.trim());
+      txt.textContent = '✓ COPIADO';
+      setTimeout(()=>{txt.textContent='📋 COPIAR CÓDIGO'},2000);
+      try{ if(typeof fbq==='function') fbq('track','Lead',{content_name:'coupon-copy'}); }catch(e){}
+    }catch(e){
+      const r = document.createRange(); r.selectNode(code);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(r);
+      document.execCommand('copy');
+      window.getSelection().removeAllRanges();
+      txt.textContent = '✓ COPIADO';
+      setTimeout(()=>{txt.textContent='📋 COPIAR CÓDIGO'},2000);
+    }
+  });
+})();
+
+// STICKY CTA mobile
+(function(){
+  const cta = document.getElementById('stickyCta');
+  if(!cta) return;
+  function onScroll(){
+    const doc = document.documentElement;
+    const pct = (window.scrollY + window.innerHeight) / doc.scrollHeight;
+    if(pct > 0.5 && pct < 0.95){
+      cta.classList.add('is-visible');
+      cta.setAttribute('aria-hidden','false');
+    }else{
+      cta.classList.remove('is-visible');
+      cta.setAttribute('aria-hidden','true');
+    }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+
+// PIXEL: track CTA clicks
+document.querySelectorAll('[data-cta]').forEach(el=>{
+  el.addEventListener('click',()=>{
+    try{ if(typeof fbq==='function') fbq('track','AddToCart',{content_name:el.getAttribute('data-cta')}); }catch(e){}
+  });
+});
+</script>
+
+</body>
+</html>
