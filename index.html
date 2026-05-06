@@ -290,7 +290,7 @@ strong,b{font-weight:700}
   letter-spacing:-0.03em;display:block;margin-bottom:2px;
 }
 
-.hero-cta-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.hero-cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:48px}
 .hero-cta-row .scroll-hint{
   font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;
   color:var(--fg-d-mute);
@@ -298,6 +298,86 @@ strong,b{font-weight:700}
 }
 .hero-cta-row .scroll-hint .arrow{color:var(--accent);animation:bounce 2s infinite}
 @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}
+
+/* HERO SUBTITLE (empathy line) */
+.hero-subtitle{
+  font-family:var(--display);font-weight:500;
+  font-size:clamp(1.2rem,1.4vw + .85rem,1.7rem);
+  color:var(--fg-d-soft);
+  max-width:740px;line-height:1.35;letter-spacing:-0.02em;
+  margin:32px 0 0;
+  font-style:italic;
+}
+.hero-subtitle strong{color:var(--fg-d);font-weight:700}
+
+/* FOUNDER STORY */
+.story{margin:64px 0 0;max-width:760px}
+.story-card{
+  background:var(--bg-2);
+  border:1px solid var(--line-d-2);
+  border-left:3px solid var(--accent);
+  padding:40px 36px 36px;
+  position:relative;
+}
+.story-tab{
+  position:absolute;top:-1px;right:24px;
+  background:var(--accent);color:#000;
+  font-family:var(--hand);font-weight:700;font-size:1.15rem;
+  padding:6px 14px 8px;
+  transform:translateY(-50%) rotate(-1.5deg);
+  letter-spacing:0;line-height:1;
+}
+.story-card p{
+  font-size:1.05rem;line-height:1.65;color:var(--fg-d-soft);
+  margin-bottom:1em;
+}
+.story-card p:last-of-type{margin-bottom:0}
+.story-card p strong{color:var(--fg-d);font-weight:600}
+.story-greeting{
+  font-size:1.2rem !important;font-family:var(--display);font-weight:600;
+  color:var(--fg-d) !important;letter-spacing:-0.015em;
+}
+.story-greeting strong{color:var(--fg-d);font-weight:700}
+.signature{
+  font-family:var(--hand);font-weight:700;font-size:1.6rem;
+  color:var(--accent);display:inline-block;margin-top:20px;
+  transform:rotate(-2deg);letter-spacing:0;line-height:1;
+}
+@media(max-width:640px){
+  .story-card{padding:32px 24px 28px}
+  .story-tab{font-size:1rem;right:18px}
+}
+
+/* SHOCK CLAIM (bisagra) */
+.shock-claim{
+  padding:clamp(72px,10vw,120px) 0;
+  background:var(--bg);
+  border-top:1px solid var(--line-d);
+  border-bottom:1px solid var(--line-d);
+  position:relative;
+}
+.shock-claim-h{
+  margin:24px 0 0 !important;
+  letter-spacing:-0.05em;
+}
+.shock-claim-p{
+  margin:32px 0 0;
+  max-width:720px;color:var(--fg-d-soft);
+  font-size:clamp(1.1rem,1vw + .9rem,1.4rem);
+}
+.shock-claim-p strong{color:var(--fg-d);font-weight:600}
+.shock-claim-data{
+  display:flex;flex-wrap:wrap;align-items:flex-start;gap:24px 48px;
+  margin-top:56px;padding-top:32px;border-top:1px solid var(--line-d);
+}
+.shock-claim-data .item{
+  font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--fg-d-soft);font-weight:500;
+}
+.shock-claim-data .num{
+  font-family:var(--display);font-size:1.6rem;font-weight:900;color:var(--accent);
+  letter-spacing:-0.04em;display:block;margin-bottom:4px;
+}
 
 /* PROBLEM AGITATE */
 .problem-grid{
@@ -963,39 +1043,71 @@ strong,b{font-weight:700}
   </div>
 </nav>
 
-<!-- HERO / PROBLEM -->
+<!-- HERO / CONNECTION -->
 <section class="hero" id="problema">
   <div class="container">
 
     <div class="hero-meta-line">
       <span><span class="dot">●</span> SHOCK COFFEE / FILE_001</span>
-      <span class="hide-mobile">SECCIÓN 01.0 — EL PROBLEMA</span>
+      <span class="hide-mobile">NOTA DEL FUNDADOR / 2024</span>
       <span>VERIFICADO UBA / 2024</span>
     </div>
 
-    <h1>El café es una de las <span class="mark lg">drogas más potentes</span> del planeta.<br/>Y nadie la usa bien.</h1>
+    <h1>Si estás acá, es porque querés <span class="mark lg">rendir más.</span></h1>
 
-    <p class="lead" style="margin-top:32px;color:var(--fg-d-soft);font-size:clamp(1.1rem,1vw + .9rem,1.4rem);max-width:720px">Lo tomás todos los días por costumbre. Te dura dos horas y a las cuatro te tira al piso. Después un Red Bull. Después otro café. Después insomnio. Después la pastilla. <strong>Algo no está funcionando.</strong></p>
+    <p class="hero-subtitle">Yo soy igual. Y estaba cansado de tomar café que lo único que me daba era acidez y ansiedad.</p>
 
-    <div class="hero-mark-row">
+    <!-- FOUNDER STORY -->
+    <div class="story">
+      <div class="story-card">
+        <div class="story-tab">↓ NOTA DE LUCAS</div>
+
+        <p class="story-greeting"><strong>¿Cómo estás? Me llamo Lucas.</strong></p>
+
+        <p>Siempre estuve obsesionado con hacer las cosas mejor. Más rápido. Con menos.</p>
+
+        <p>¿Existe una <strong>dieta</strong> mejor? Así encontré el ayuno. <strong>¿Se puede entrenar</strong> mejor y en menos tiempo? Ahí descubrí el HIIT. Y trabajando como un condenado, descubrí algo más raro: <strong>el café</strong> — que supuestamente debía darme foco, energía y concentración — me estaba dando acidez y ansiedad.</p>
+
+        <p>Ahí me puse a investigar. Y lo que encontré me cambió la cabeza: <strong>la cafeína es uno de los nootrópicos más potentes y estudiados del planeta.</strong> Pero la mayoría del café del mercado está hecho para acompañar medialunas, no para que rindas.</p>
+
+        <p>Así que decidí hacer uno yo mismo. Granos AA, tueste lento, cafeína medida en laboratorio por la UBA. Sin acidez. Sin ansiedad. Sin la jitterness del energy drink.</p>
+
+        <p style="margin-top:24px"><strong>Por eso creé <span class="mark">SHOCK Coffee.</span></strong></p>
+
+        <div class="signature">— Lucas, fundador</div>
+      </div>
+    </div>
+
+    <div class="hero-cta-row">
+      <a href="#oferta" class="btn btn-yellow btn-lg" data-cta="hero-shortcut">Probarlo — 10% OFF <span class="btn-arrow">→</span></a>
+      <a href="#shock-claim" class="btn btn-outline btn-lg" data-cta="hero-explain">O bajá para entender por qué <span class="btn-arrow">↓</span></a>
+    </div>
+
+  </div>
+</section>
+
+<!-- SHOCK CLAIM (bisagra entre story y argumento) -->
+<section class="shock-claim" id="shock-claim">
+  <div class="container">
+    <div class="sec-num"><span>02 / EL CLAIM</span><span>FILE_001</span></div>
+
+    <h2 class="shock-claim-h">El café es una de las <span class="mark lg">drogas más potentes</span> del planeta.<br/>Y nadie la usa bien.</h2>
+
+    <p class="lead shock-claim-p">Lo tomás todos los días por costumbre. Te dura dos horas y a las cuatro te tira al piso. Después un Red Bull. Después otro café. Después insomnio. Después la pastilla. <strong>Algo no está funcionando.</strong></p>
+
+    <div class="shock-claim-data">
       <div class="item"><span class="num">12.000+</span>cafés tomados<br/>en una vida promedio</div>
       <div class="item"><span class="num">90%</span>está mal tostado<br/>o mal medido</div>
       <div class="item"><span class="num">~2h</span>dura el efecto<br/>de un café común</div>
       <div class="item"><span class="num">87</span>ingredientes<br/>en el pre-workout promedio</div>
     </div>
-
-    <div class="hero-cta-row">
-      <a href="#solucion" class="btn btn-yellow btn-lg" data-cta="hero">Cómo se arregla esto <span class="btn-arrow">↓</span></a>
-      <span class="scroll-hint">[ Bajá para entender ] <span class="arrow">↓</span></span>
-    </div>
-
   </div>
 </section>
 
 <!-- AGITATE / Lucas voz -->
 <section class="section">
   <div class="container">
-    <div class="sec-num"><span>02 / AGITAR</span><span>FILE_001</span></div>
+    <div class="sec-num"><span>03 / AGITAR</span><span>FILE_001</span></div>
 
     <div class="problem-grid">
       <div class="problem-text">
@@ -1074,7 +1186,7 @@ strong,b{font-weight:700}
 <!-- SOLUTION INTRO (paper) -->
 <section class="section section-paper" id="solucion">
   <div class="container">
-    <div class="sec-num" style="color:var(--fg-l-mute);border-color:var(--line-l)"><span>03 / SOLUCIÓN</span><span>FILE_002</span></div>
+    <div class="sec-num" style="color:var(--fg-l-mute);border-color:var(--line-l)"><span>04 / SOLUCIÓN</span><span>FILE_002</span></div>
   </div>
   <div class="solution-intro">
     <h2>Hicimos <span class="mark">SHOCK</span> porque la cafeína es de las drogas más estudiadas del planeta — y la mayoría no la usa bien.</h2>
@@ -1124,7 +1236,7 @@ strong,b{font-weight:700}
 <!-- CIENCIA / NOOTRÓPICO -->
 <section class="section" id="ciencia">
   <div class="container">
-    <div class="sec-num"><span>04 / MECANISMO</span><span>FILE_003</span></div>
+    <div class="sec-num"><span>05 / MECANISMO</span><span>FILE_003</span></div>
 
     <div class="science-grid">
       <div>
@@ -1235,7 +1347,7 @@ strong,b{font-weight:700}
 <!-- PERFILES (3 caminos) -->
 <section class="section">
   <div class="container">
-    <div class="sec-num"><span>05 / PARA QUIÉN</span><span>FILE_004</span></div>
+    <div class="sec-num"><span>06 / PARA QUIÉN</span><span>FILE_004</span></div>
 
     <div class="perfiles-header">
       <div class="tag">Tres formas de usarlo</div>
@@ -1286,7 +1398,7 @@ strong,b{font-weight:700}
 <!-- DAY (paper) -->
 <section class="section section-paper">
   <div class="container">
-    <div class="sec-num" style="color:var(--fg-l-mute);border-color:var(--line-l)"><span>06 / TU DÍA</span><span>FILE_005</span></div>
+    <div class="sec-num" style="color:var(--fg-l-mute);border-color:var(--line-l)"><span>07 / TU DÍA</span><span>FILE_005</span></div>
 
     <div style="max-width:760px">
       <div class="tag">Un día con SHOCK</div>
@@ -1339,7 +1451,7 @@ strong,b{font-weight:700}
 <!-- GALLERY -->
 <section class="section">
   <div class="container">
-    <div class="sec-num"><span>07 / EL PRODUCTO</span><span>FILE_006</span></div>
+    <div class="sec-num"><span>08 / EL PRODUCTO</span><span>FILE_006</span></div>
 
     <div class="gallery-header">
       <div>
@@ -1373,7 +1485,7 @@ strong,b{font-weight:700}
 <!-- TESTIMONIALS -->
 <section class="section" id="testimonios">
   <div class="container">
-    <div class="sec-num"><span>08 / RESEÑAS</span><span>FILE_007</span></div>
+    <div class="sec-num"><span>09 / RESEÑAS</span><span>FILE_007</span></div>
 
     <div class="tests-header">
       <div class="tag">Reseñas reales</div>
@@ -1496,7 +1608,7 @@ strong,b{font-weight:700}
 <!-- OFFER -->
 <section class="section" id="oferta">
   <div class="container">
-    <div class="sec-num"><span>09 / OFERTA</span><span>FILE_008</span></div>
+    <div class="sec-num"><span>10 / OFERTA</span><span>FILE_008</span></div>
 
     <div class="offer-grid">
 
@@ -1572,7 +1684,7 @@ strong,b{font-weight:700}
 <!-- FAQ -->
 <section class="section section-paper">
   <div class="container">
-    <div class="sec-num" style="color:var(--fg-l-mute);border-color:var(--line-l)"><span>10 / FAQ</span><span>FILE_009</span></div>
+    <div class="sec-num" style="color:var(--fg-l-mute);border-color:var(--line-l)"><span>11 / FAQ</span><span>FILE_009</span></div>
 
     <div style="max-width:760px;margin:0 auto;text-align:center">
       <div class="tag">Preguntas frecuentes</div>
